@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Absolute Value — Mathematics XI G</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cream: #FFFDF5;
+            --coral: #FF6B6B;
+            --orange: #FF9F43;
+            --yellow: #FFD93D;
+            --lime: #B8E986;
+            --green: #6BCB77;
+            --turquoise: #4ECDC4;
+            --blue: #4D96FF;
+            --lavender: #A78BFA;
+            --purple: #845EC2;
+            --pink: #FF8FAB;
+
+            --ink: #28243D;
+            --muted: #686477;
+            --border: #28243D;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* BACKGROUND */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            opacity: 0.3;
+            background-image: radial-gradient(
+                #B7A6D9 1px,
+                transparent 1px
+            );
+            background-size: 19px 19px;
+        }
+
+        .floating-particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-particles span {
+            position: absolute;
+            font-family: 'Patrick Hand', cursive;
+            animation: particleFloat 7s ease-in-out infinite;
+            opacity: 0.35;
+        }
+
+        .floating-particles span:nth-child(1) {
+            top: 15%;
+            left: 8%;
+            color: var(--coral);
+            font-size: 28px;
+        }
+
+        .floating-particles span:nth-child(2) {
+            top: 72%;
+            left: 44%;
+            color: var(--blue);
+            font-size: 32px;
+            animation-delay: 1s;
+        }
+
+        .floating-particles span:nth-child(3) {
+            top: 35%;
+            right: 9%;
+            color: var(--orange);
+            font-size: 27px;
+            animation-delay: 2s;
+        }
+
+        .floating-particles span:nth-child(4) {
+            bottom: 12%;
+            right: 20%;
+            color: var(--purple);
+            font-size: 25px;
+            animation-delay: 3s;
+        }
+
+        .floating-particles span:nth-child(5) {
+            top: 55%;
+            left: 15%;
+            color: var(--green);
+            font-size: 30px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-20px) rotate(25deg);
+            }
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 25px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-icon {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            background: var(--yellow);
+            border: 1.5px solid var(--ink);
+            font-size: 17px;
+        }
+
+        .nav-label {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--purple);
+        }
+
+        /* MAIN HERO */
+
+        .hero {
+            width: 100%;
+            max-width: 1200px;
+            min-height: 700px;
+            margin: auto;
+            padding: 65px 6%;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            column-gap: 55px;
+            row-gap: 50px;
+        }
+
+        /* LEFT CONTENT */
+
+        .content {
+            width: 100%;
+            min-width: 0;
+            grid-column: 1;
+            animation: fadeUp 0.9s ease-out both;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 13px;
+            background: var(--yellow);
+            border: 1.5px solid var(--ink);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+
+        .tag span {
+            width: 8px;
+            height: 8px;
+            background: var(--coral);
+            border: 1px solid var(--ink);
+            animation: dotPulse 1.8s infinite;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 1.04;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            background: linear-gradient(
+                90deg,
+                var(--coral),
+                var(--orange),
+                var(--purple),
+                var(--blue)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+
+        .subtitle {
+            font-family: 'Patrick Hand', cursive;
+            color: var(--purple);
+            font-size: 23px;
+            margin-bottom: 15px;
+            animation: fadeUp 0.8s ease-out 0.3s both;
+        }
+
+        .description {
+            max-width: 470px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .description b {
+            color: var(--coral);
+        }
+
+        /* CLASS INFORMATION */
+
+        .class-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 27px;
+        }
+
+        .class-item {
+            padding: 8px 11px;
+            border: 1.5px solid var(--ink);
+            background: var(--white);
+            font-size: 10px;
+            font-weight: 800;
+            transition: 0.25s ease;
+        }
+
+        .class-item:nth-child(1) {
+            background: var(--pink);
+        }
+
+        .class-item:nth-child(2) {
+            background: var(--turquoise);
+        }
+
+        .class-item:nth-child(3) {
+            background: var(--yellow);
+        }
+
+        .class-item:hover {
+            transform: translateY(-5px) rotate(-2deg);
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+
+        /* TEAM */
+
+        .team-info {
+            margin-bottom: 27px;
+        }
+
+        .team-title {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 11px;
+        }
+
+        .team-list {
+            display: flex;
+            flex-direction: column;
+            max-width: 350px;
+            border-top: 1.5px solid var(--ink);
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 9px 3px;
+            border-bottom: 1px solid #D7D2DF;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .team-member:hover {
+            padding-left: 12px;
+            background: #FFF0D9;
+        }
+
+        .member-number {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--coral);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* BUTTON */
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 21px;
+            background: var(--yellow);
+            border: 1.5px solid var(--ink);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 var(--ink);
+            transition: 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--coral);
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 5px 7px 0 var(--ink);
+        }
+
+        .btn-primary span {
+            font-size: 19px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover span {
+            transform: translateX(7px);
+        }
+
+        /* RIGHT VISUAL */
+
+        .visual {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            grid-column: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .math-card {
+            width: 100%;
+            max-width: 440px;
+            background: var(--white);
+            border: 1.5px solid var(--ink);
+            padding: 27px;
+            position: relative;
+            box-shadow: 9px 9px 0 var(--purple);
+            transition: 0.3s ease;
+            animation: cardEnter 1s cubic-bezier(.2,.8,.2,1) both;
+        }
+
+        .math-card:hover {
+            box-shadow: 13px 13px 0 var(--coral);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 16px;
+            border-bottom: 1.5px solid #D7D2DF;
+        }
+
+        .card-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .card-number {
+            font-family: 'Patrick Hand', cursive;
+            color: var(--coral);
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .formula {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 43px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+
+        .formula span {
+            color: var(--purple);
+        }
+
+        .formula-sub {
+            text-align: center;
+            font-family: 'Patrick Hand', cursive;
+            color: var(--coral);
+            font-size: 18px;
+            margin-top: 5px;
+            margin-bottom: 24px;
+        }
+
+        /* GRAPH */
+
+        .graph-container {
+            background: #FFF9E9;
+            border: 1.5px solid var(--ink);
+            padding: 12px;
+        }
+
+        .graph {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .graph .axis {
+            stroke: #686477;
+            stroke-width: 1.3;
+        }
+
+        .graph .curve {
+            fill: none;
+            stroke: var(--coral);
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            animation: drawGraph 2s ease forwards 0.7s;
+        }
+
+        .graph .vertex {
+            fill: var(--yellow);
+            stroke: var(--ink);
+            stroke-width: 1.5;
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: vertexPop 0.6s ease-out 2.4s both;
+        }
+
+        .graph text {
+            fill: #686477;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+        }
+
+        .graph-caption {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            padding-top: 13px;
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        /* DECORATIONS */
+
+        .sticker {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            border: 1.5px solid var(--ink);
+            font-family: 'Patrick Hand', cursive;
+            z-index: 2;
+        }
+
+        .sticker-star {
+            width: 55px;
+            height: 55px;
+            top: -23px;
+            right: -19px;
+            background: var(--yellow);
+            font-size: 27px;
+            transform: rotate(9deg);
+            animation: stickerFloat 3s ease-in-out infinite;
+        }
+
+        .sticker-note {
+            padding: 11px 14px;
+            bottom: -22px;
+            left: -22px;
+            background: var(--turquoise);
+            font-size: 17px;
+            transform: rotate(-5deg);
+            animation: stickerFloat 3.8s ease-in-out infinite reverse;
+        }
+
+        .decoration {
+            position: absolute;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 27px;
+            z-index: 1;
+        }
+
+        .deco-one {
+            top: 5%;
+            left: 2%;
+            color: var(--coral);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .deco-two {
+            bottom: 8%;
+            right: 1%;
+            color: var(--blue);
+            animation: float 3.5s ease-in-out infinite reverse;
+        }
+
+        /* FOOTER */
+
+        footer {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 22px 7%;
+            border-top: 2px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        footer strong {
+            color: var(--purple);
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-8deg);
+            }
+            50% {
+                transform: translateY(-13px) rotate(8deg);
+            }
+        }
+
+        @keyframes stickerFloat {
+            0%, 100% {
+                translate: 0 0;
+            }
+            50% {
+                translate: 0 -10px;
+            }
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.94);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes drawGraph {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes vertexPop {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            70% {
+                transform: scale(1.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(1.35);
+            }
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) and (min-width: 601px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+                padding: 55px 4%;
+                column-gap: 25px;
+            }
+
+            h1 {
+                font-size: clamp(36px, 5vw, 48px);
+                letter-spacing: -2px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .description {
+                font-size: 12px;
+            }
+
+            .class-info {
+                gap: 5px;
+            }
+
+            .class-item {
+                font-size: 9px;
+                padding: 7px 8px;
+            }
+
+            .team-member {
+                font-size: 10px;
+            }
+
+            .math-card {
+                padding: 19px;
+            }
+
+            .formula {
+                font-size: 34px;
+            }
+
+            .card-label {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .sticker-star {
+                right: -8px;
+            }
+
+            .sticker-note {
+                left: -8px;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                font-size: 12px;
+            }
+
+            .logo-icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            .nav-label {
+                font-size: 8px;
+                letter-spacing: 0.5px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 50px 6% 75px;
+                gap: 65px;
+                text-align: center;
+            }
+
+            .content,
+            .visual {
+                grid-column: 1;
+            }
+
+            h1 {
+                font-size: 46px;
+                letter-spacing: -2px;
+            }
+
+            .description {
+                font-size: 13px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .class-info,
+            .buttons {
+                justify-content: center;
+            }
+
+            .team-list {
+                margin: auto;
+                text-align: left;
+            }
+
+            .math-card {
+                max-width: 430px;
+                padding: 23px 17px;
+                text-align: left;
+            }
+
+            .formula {
+                font-size: 36px;
+            }
+
+            .sticker-star {
+                right: -8px;
+            }
+
+            .sticker-note {
+                left: -8px;
+            }
+
+            footer {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING BACKGROUND -->
+
+    <div class="floating-particles">
+        <span>✦</span>
+        <span>✧</span>
+        <span>+</span>
+        <span>✳</span>
+        <span>·</span>
+    </div>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <main class="hero">
+
+        <!-- LEFT CONTENT -->
+
+        <section class="content">
+
+            <div class="tag">
+                <span></span>
+                ADVANCED MATHEMATICS
+            </div>
+
+            <div class="subtitle">
+                Let's learn something new!
+            </div>
+
+            <h1>
+                EXPLORE THE<br>
+                <span class="highlight">ABSOLUTE</span><br>
+                VALUE.
+            </h1>
+
+            <p class="description">
+                Kami akan mengajak kalian untuk mengenal lebih jauh konsep <b>nilai mutlak</b> melalui
+                pemahaman teori, eksplorasi grafik interaktif,
+                dan penerapannya dalam kehidupan sehari-hari.
+                Mari belajar matematika dengan cara yang lebih menyenangkan!
+            </p>
+
+            <!-- CLASS INFORMATION -->
+
+            <div class="class-info">
+
+                <div class="class-item">
+                    MATEMATIKA LANJUT
+                </div>
+
+                <div class="class-item">
+                    KELAS XI G
+                </div>
+
+                <div class="class-item">
+                    SOSIAL HUMANIORA
+                </div>
+
+            </div>
+
+            <!-- TEAM MEMBERS -->
+
+            <div class="team-info">
+
+                <div class="team-title">
+                    MEET OUR TEAM ✳
+                </div>
+
+                <div class="team-list">
+
+                    <div class="team-member">
+                        <span class="member-number">01.</span>
+                        Alya Jazilah (02)
+                    </div>
+
+                    <div class="team-member">
+                        <span class="member-number">02.</span>
+                        Utya Ayunda Rahma (23)
+                    </div>
+
+                    <div class="team-member">
+                        <span class="member-number">03.</span>
+                        Widya Amelia Ningrum (25)
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- START BUTTON -->
+
+            <div class="buttons">
+
+                <a href="pengenalankonsep.html" class="btn-primary">
+                    Mulai Belajar
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- RIGHT CONTENT -->
+
+        <section class="visual">
+
+            <div class="decoration deco-one">✳</div>
+            <div class="decoration deco-two">✧</div>
+
+            <div class="math-card">
+
+                <div class="card-top">
+                    <div class="card-label">
+                        MATHEMATICAL PREVIEW
+                    </div>
+                </div>
+
+                <div class="formula">
+                    f(x) = <span>|x|</span>
+                </div>
+
+                <div class="formula-sub">
+                    FUNGSI NILAI MUTLAK
+                </div>
+
+                <!-- GRAPH -->
+
+                <div class="graph-container">
+
+                    <svg
+                        class="graph"
+                        viewBox="0 0 350 175"
+                        role="img"
+                        aria-label="Grafik fungsi nilai mutlak y sama dengan nilai mutlak x">
+
+                        <defs>
+                            <pattern
+                                id="grid"
+                                width="25"
+                                height="25"
+                                patternUnits="userSpaceOnUse">
+
+                                <path
+                                    d="M 25 0 L 0 0 0 25"
+                                    fill="none"
+                                    stroke="#E5DDF1"
+                                    stroke-width="0.8"/>
+
+                            </pattern>
+                        </defs>
+
+                        <rect
+                            width="350"
+                            height="175"
+                            fill="url(#grid)"/>
+
+                        <!-- AXIS -->
+
+                        <line
+                            class="axis"
+                            x1="15" y1="140"
+                            x2="335" y2="140"/>
+
+                        <line
+                            class="axis"
+                            x1="175" y1="10"
+                            x2="175" y2="160"/>
+
+                        <!-- FUNCTION GRAPH -->
+
+                        <path
+                            class="curve"
+                            d="M 75 40 L 175 140 L 275 40"/>
+
+                        <!-- VERTEX -->
+
+                        <circle
+                            class="vertex"
+                            cx="175"
+                            cy="140"
+                            r="5"/>
+
+                        <!-- LABELS -->
+
+                        <text x="184" y="154">0</text>
+                        <text x="322" y="155">x</text>
+                        <text x="184" y="18">y</text>
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+            <!-- STICKERS -->
+
+            <div class="sticker sticker-star">
+                ✦
+            </div>
+
+            <div class="sticker sticker-note">
+                Math can be fun!
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <span>MATHEMATICS PROJECT — <strong>XI G</strong></span>
+        <span>LEARN • EXPLORE • DISCOVER ✦</span>
+    </footer>
+
+</body>
+</html>

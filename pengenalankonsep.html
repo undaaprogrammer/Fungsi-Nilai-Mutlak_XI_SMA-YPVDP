@@ -1,0 +1,1761 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Absolute Value — Mathematics XI G</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --cream:#FFFDF5;
+    --coral:#FF6B6B;
+    --orange:#FF9F43;
+    --yellow:#FFD93D;
+    --lime:#B8E986;
+    --green:#6BCB77;
+    --turquoise:#4ECDC4;
+    --blue:#4D96FF;
+    --lavender:#A78BFA;
+    --purple:#845EC2;
+    --pink:#FF8FAB;
+    --ink:#28243D;
+    --muted:#686477;
+    --border:#D7D2DF;
+    --white:#FFFFFF;
+    --red:#FFE0E0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    overflow-x:hidden;
+}
+
+button,input{font:inherit}
+button{cursor:pointer}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    opacity:.24;
+    background-image:radial-gradient(#A9A3B5 .7px,transparent .7px);
+    background-size:17px 17px;
+}
+
+h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+
+/* NAVIGATION */
+
+nav{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid var(--ink);
+    background:rgba(255,253,245,.94);
+    position:sticky;
+    top:0;
+    z-index:20;
+    backdrop-filter:blur(12px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.logo-icon{
+    width:39px;
+    height:39px;
+    display:grid;
+    place-items:center;
+    background:var(--yellow);
+    border:2px solid var(--ink);
+}
+
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-label{
+    color:var(--muted);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.3px;
+}
+.back-link{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:11px;
+    font-weight:800;
+}
+
+/* PAGE */
+
+main{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:55px 7% 85px;
+}
+
+.section{
+    margin-bottom:85px;
+    scroll-margin-top:100px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    background:var(--yellow);
+    border:2px solid var(--ink);
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    margin-bottom:20px;
+    box-shadow:3px 3px 0 var(--ink);
+}
+
+.eyebrow span{
+    width:8px;
+    height:8px;
+    background:var(--coral);
+    border:1px solid var(--ink);
+    border-radius:50%;
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:24px;
+}
+
+.section-number{
+    width:45px;
+    height:45px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    background:var(--turquoise);
+    border:2px solid var(--ink);
+    box-shadow:3px 3px 0 var(--ink);
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:800;
+}
+
+.section:nth-of-type(3n+1) .section-number{background:var(--coral)}
+.section:nth-of-type(3n+2) .section-number{background:var(--yellow)}
+.section:nth-of-type(3n) .section-number{background:var(--lavender)}
+
+.section-heading h2{
+    font-size:24px;
+    letter-spacing:-.7px;
+}
+
+.section-label{
+    display:block;
+    color:var(--purple);
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    margin-bottom:4px;
+}
+
+.intro-text{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.9;
+    max-width:650px;
+    margin-bottom:25px;
+}
+
+/* HERO */
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr .8fr;
+    gap:45px;
+    align-items:center;
+    margin-bottom:80px;
+}
+
+.hero h1{
+    font-size:clamp(40px,5vw,62px);
+    line-height:1.05;
+    letter-spacing:-2.5px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:var(--coral);
+    text-shadow:3px 3px 0 var(--yellow);
+}
+
+.hero-subtitle{
+    font-family:'Patrick Hand',cursive;
+    font-size:23px;
+    color:var(--purple);
+    margin-bottom:12px;
+}
+
+.hero-description{
+    max-width:520px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.9;
+}
+
+.hero-card{
+    background:var(--white);
+    border:2px solid var(--ink);
+    padding:27px;
+    box-shadow:8px 8px 0 var(--turquoise);
+    position:relative;
+}
+
+.hero-card-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    border-bottom:2px dashed var(--border);
+    padding-bottom:14px;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.hero-card-top span:last-child{
+    color:var(--coral);
+    font-family:'Patrick Hand',cursive;
+    font-size:16px;
+}
+
+.hero-formula{
+    text-align:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:43px;
+    font-weight:700;
+    margin:30px 0 8px;
+}
+
+.hero-formula span{color:var(--coral)}
+
+.hero-note{
+    text-align:center;
+    color:var(--muted);
+    font-family:'Patrick Hand',cursive;
+    font-size:18px;
+}
+
+.hero-sticker{
+    position:absolute;
+    top:-18px;
+    right:-14px;
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    background:var(--pink);
+    border:2px solid var(--ink);
+    font-size:22px;
+    transform:rotate(9deg);
+    box-shadow:3px 3px 0 var(--ink);
+}
+
+/* CARDS */
+
+.card,.definition-box{
+    background:var(--white);
+    border:2px solid var(--ink);
+    padding:25px;
+    box-shadow:4px 4px 0 var(--border);
+}
+
+.card-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.card-description{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.9;
+}
+
+.interactive-card{
+    background:#FFF8E8;
+    border:2px solid var(--ink);
+    padding:25px;
+    margin-top:20px;
+    box-shadow:5px 5px 0 var(--yellow);
+}
+
+.interactive-label{
+    color:var(--purple);
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    margin-bottom:12px;
+}
+
+.result-box{
+    background:var(--white);
+    border:1.5px solid var(--border);
+    padding:17px;
+    margin-top:17px;
+}
+
+.result-box strong{color:var(--coral)}
+
+.result-text{
+    font-size:12px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+/* BUTTONS */
+
+.action-button{
+    border:2px solid var(--ink);
+    padding:11px 16px;
+    background:var(--yellow);
+    color:var(--ink);
+    font-size:11px;
+    font-weight:800;
+    box-shadow:3px 3px 0 var(--ink);
+    transition:.2s;
+}
+
+.action-button:hover{
+    background:var(--coral);
+    color:white;
+    transform:translate(2px,2px);
+    box-shadow:1px 1px 0 var(--ink);
+}
+
+.action-button.secondary{background:var(--white)}
+.action-button.secondary:hover{background:var(--turquoise);color:var(--ink)}
+
+.action-row{
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+/* NUMBER LINE */
+
+.number-line{
+    width:100%;
+    height:auto;
+    display:block;
+    margin:20px 0 5px;
+    overflow:visible;
+}
+
+input[type="range"]{
+    width:100%;
+    accent-color:var(--coral);
+    cursor:pointer;
+    margin:15px 0;
+}
+
+input[type="number"]{
+    width:100%;
+    max-width:220px;
+    padding:12px;
+    border:2px solid var(--ink);
+    background:white;
+    color:var(--ink);
+    outline:none;
+}
+
+input:focus{border-color:var(--coral)}
+
+.explorer-results{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:15px;
+}
+
+.result-stat{
+    background:white;
+    border:2px solid var(--ink);
+    padding:15px;
+}
+
+.result-stat:nth-child(1){box-shadow:3px 3px 0 var(--blue)}
+.result-stat:nth-child(2){box-shadow:3px 3px 0 var(--pink)}
+
+.result-stat span{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    margin-bottom:6px;
+}
+
+.result-stat strong{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:26px;
+    color:var(--coral);
+}
+
+/* CALCULATOR */
+
+.calculator-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:18px;
+    margin-top:20px;
+}
+
+.calculator-input{
+    background:var(--yellow);
+    border:2px solid var(--ink);
+    padding:22px;
+}
+
+.calculator-output{
+    background:white;
+    border:2px solid var(--ink);
+    padding:22px;
+}
+
+.calculator-equation{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:25px;
+    font-weight:700;
+    margin:12px 0;
+    overflow-wrap:anywhere;
+}
+
+.calculator-equation span{color:var(--coral)}
+
+/* PIECEWISE */
+
+.piecewise{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:18px;
+}
+
+.piece{
+    border:2px solid var(--ink);
+    padding:18px;
+    background:var(--turquoise);
+    box-shadow:4px 4px 0 var(--ink);
+}
+
+.piece:nth-child(2){background:var(--pink)}
+
+.piece strong{
+    display:block;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:24px;
+    margin:10px 0;
+}
+
+.piece p{
+    color:var(--ink);
+    font-size:11px;
+    line-height:1.8;
+}
+
+/* DOMAIN RANGE */
+
+.domain-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.domain-card{
+    padding:22px;
+    border:2px solid var(--ink);
+    background:var(--lavender);
+    box-shadow:4px 4px 0 var(--ink);
+}
+
+.domain-card:nth-child(2){background:var(--lime)}
+
+.domain-card h3{font-size:19px;margin:8px 0}
+.domain-card p{font-size:11px;line-height:1.8}
+
+.domain-value{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:24px;
+    font-weight:700;
+    margin:12px 0;
+}
+
+.table-wrap{overflow-x:auto;margin-top:18px}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    background:white;
+    font-size:12px;
+    text-align:center;
+}
+
+th,td{
+    border:1.5px solid var(--ink);
+    padding:12px;
+}
+
+th{background:var(--yellow);font-weight:800}
+td.highlight-cell{background:#FFE0E8;font-weight:800}
+
+/* GRAPH */
+
+.graph-layout{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:18px;
+    margin-top:20px;
+}
+
+.graph-panel{
+    background:white;
+    border:2px solid var(--ink);
+    padding:18px;
+    box-shadow:5px 5px 0 var(--lavender);
+}
+
+.graph-panel svg{display:block;width:100%;height:auto}
+
+.graph-info{
+    background:var(--blue);
+    border:2px solid var(--ink);
+    padding:22px;
+    box-shadow:5px 5px 0 var(--ink);
+}
+
+.graph-info h3{font-size:17px;margin-bottom:12px}
+.graph-info p{color:var(--ink);font-size:12px;line-height:1.9}
+
+.graph-highlight{
+    margin-top:15px;
+    padding:13px;
+    background:white;
+    border:1.5px solid var(--ink);
+    font-size:12px;
+    line-height:1.8;
+}
+
+.graph-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:15px;
+}
+
+.graph-buttons button{
+    padding:8px 10px;
+    border:2px solid var(--ink);
+    background:white;
+    font-size:10px;
+    font-weight:700;
+    box-shadow:2px 2px 0 var(--ink);
+}
+
+.graph-buttons button.active{
+    background:var(--coral);
+    color:white;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
+    margin-top:20px;
+}
+
+.feature{
+    display:flex;
+    gap:13px;
+    padding:18px;
+    border:2px solid var(--ink);
+    background:white;
+    box-shadow:3px 3px 0 var(--border);
+}
+
+.feature:nth-child(6n+1) .feature-icon{background:var(--coral)}
+.feature:nth-child(6n+2) .feature-icon{background:var(--yellow)}
+.feature:nth-child(6n+3) .feature-icon{background:var(--turquoise)}
+.feature:nth-child(6n+4) .feature-icon{background:var(--pink)}
+.feature:nth-child(6n+5) .feature-icon{background:var(--lime)}
+.feature:nth-child(6n) .feature-icon{background:var(--lavender)}
+
+.feature-icon{
+    width:35px;
+    height:35px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    border:2px solid var(--ink);
+    font-weight:800;
+}
+
+.feature h3{font-size:13px;margin-bottom:6px}
+.feature p{font-size:11px;color:var(--muted);line-height:1.8}
+
+/* MYTH BUSTER */
+
+.myth-list{display:flex;flex-direction:column;gap:13px}
+
+.myth{
+    padding:20px;
+    border:2px solid var(--ink);
+    background:white;
+    box-shadow:4px 4px 0 var(--pink);
+}
+
+.myth:nth-child(2){box-shadow:4px 4px 0 var(--turquoise)}
+.myth:nth-child(3){box-shadow:4px 4px 0 var(--yellow)}
+
+.myth-question{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+.myth-feedback{
+    display:none;
+    margin-top:13px;
+    padding:12px;
+    font-size:11px;
+    line-height:1.8;
+    border:1.5px solid var(--ink);
+}
+
+.myth-feedback.show{display:block}
+.myth-feedback.correct{background:var(--lime)}
+.myth-feedback.wrong{background:var(--red)}
+
+/* QUIZ */
+
+.quiz-card{
+    background:var(--lavender);
+    border:2px solid var(--ink);
+    padding:25px;
+    box-shadow:6px 6px 0 var(--ink);
+}
+
+.quiz-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:20px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.progress-track{
+    height:9px;
+    background:white;
+    border:2px solid var(--ink);
+    margin-bottom:22px;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:var(--coral);
+    transition:.3s;
+}
+
+.quiz-question{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:19px;
+    font-weight:700;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.quiz-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.quiz-option{
+    background:white;
+    border:2px solid var(--ink);
+    padding:14px;
+    text-align:left;
+    font-size:12px;
+    box-shadow:3px 3px 0 var(--ink);
+    transition:.2s;
+}
+
+.quiz-option:hover:not(:disabled){background:var(--yellow)}
+.quiz-option:disabled{cursor:default;opacity:1}
+.quiz-option.correct-answer{background:var(--lime)}
+.quiz-option.wrong-answer{background:var(--red)}
+
+.quiz-feedback{
+    display:none;
+    background:white;
+    border:2px solid var(--ink);
+    padding:15px;
+    margin-top:16px;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.quiz-feedback.show{display:block}
+
+.quiz-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.quiz-result{
+    display:none;
+    text-align:center;
+    padding:25px;
+    background:white;
+    border:2px solid var(--ink);
+    margin-top:20px;
+}
+
+.quiz-result.show{display:block}
+
+.quiz-result strong{
+    display:block;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:38px;
+    color:var(--coral);
+    margin:12px;
+}
+
+/* SUMMARY */
+
+.summary{
+    background:var(--yellow);
+    border:2px solid var(--ink);
+    padding:28px;
+    box-shadow:6px 6px 0 var(--ink);
+}
+
+.summary h2{font-size:22px;margin-bottom:15px}
+.summary ul{padding-left:20px}
+.summary li{font-size:12px;line-height:2}
+
+.summary-note{
+    font-family:'Patrick Hand',cursive;
+    color:var(--purple);
+    font-size:19px;
+    margin-top:18px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:55px;
+}
+
+.nav-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:14px 18px;
+    text-decoration:none;
+    color:var(--ink);
+    border:2px solid var(--ink);
+    font-size:11px;
+    font-weight:800;
+    box-shadow:4px 4px 0 var(--ink);
+    transition:.2s;
+}
+
+.nav-button.back{background:var(--white)}
+.nav-button.next{background:var(--turquoise)}
+
+.nav-button:hover{
+    background:var(--coral);
+    color:white;
+    transform:translate(2px,2px);
+    box-shadow:2px 2px 0 var(--ink);
+}
+
+/* FOOTER */
+
+footer{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:22px 7%;
+    border-top:2px solid var(--ink);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    color:var(--muted);
+    font-size:10px;
+}
+
+footer strong{color:var(--ink)}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+    main{padding-left:5%;padding-right:5%}
+    .hero{gap:25px}
+    .graph-layout{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+    nav{padding:15px 5%}
+    .logo{font-size:11px}
+    .logo-icon{width:34px;height:34px}
+    .nav-label{display:none}
+    main{padding:40px 6% 65px}
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:30px;
+        margin-bottom:65px;
+    }
+    .hero h1{font-size:43px}
+    .hero-description{font-size:12px}
+    .hero-card{max-width:420px;margin:auto;width:100%}
+    .section-heading h2{font-size:19px}
+    .calculator-grid,.domain-grid,.piecewise,.features{grid-template-columns:1fr}
+    .quiz-options{grid-template-columns:1fr}
+    .explorer-results{grid-template-columns:1fr 1fr}
+    .bottom-nav{flex-direction:column}
+    footer{justify-content:center;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+    <div>
+        <div class="eyebrow">
+            <span></span>
+            CHAPTER 01 . PENGENALAN KONSEP
+        </div>
+
+        <div class="hero-subtitle">Learn it. Try it. Understand it.</div>
+
+        <h1>
+            EXPLORE THE<br>
+            <span>ABSOLUTE</span><br>
+            VALUE.
+        </h1>
+
+        <p class="hero-description">
+            Belajar nilai mutlak tidak harus hanya dengan
+            membaca teori dan menghafalkan rumus.
+            Di sini, kamu bisa mencoba sendiri, menggeser
+            angka, menghitung, mengamati grafik, dan
+            menguji pemahamanmu melalui aktivitas interaktif.
+        </p>
+    </div>
+
+    <div class="hero-card">
+        <div class="hero-sticker">✦</div>
+        <div class="hero-card-top">
+            <span>YOUR LEARNING JOURNEY</span>
+            <span>01 / 03</span>
+        </div>
+        <div class="hero-formula">f(x) = <span>|x|</span></div>
+        <div class="hero-note">Mathematics is better when you explore!</div>
+    </div>
+</section>
+
+<!-- 01 DEFINITION -->
+
+<section class="section" id="pengertian">
+    <div class="section-heading">
+        <div class="section-number">01</div>
+        <div><h2>Apa Itu Nilai Mutlak?</h2></div>
+    </div>
+
+    <p class="intro-text">
+        Sebelum mencoba berbagai aktivitas, mari pahami
+        satu konsep utama: nilai mutlak merupakan jarak
+        suatu bilangan terhadap nol pada garis bilangan,
+        tanpa memperhatikan arah.
+    </p>
+
+    <div class="card">
+        <h3 class="card-title">The Distance Concept</h3>
+        <p class="card-description">
+            Coba geser slider di bawah. Perhatikan bagaimana
+            posisi bilangan berubah dan berapa jaraknya dari nol.
+        </p>
+    </div>
+
+    <div class="interactive-card">
+        <div class="interactive-label">INTERACTIVE NUMBER LINE</div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+            <strong>Choose your number</strong>
+            <strong id="numberDisplay" style="font-size:25px;color:var(--coral);">-7</strong>
+        </div>
+
+        <input type="range" id="numberSlider" min="-10" max="10" step="1" value="-7">
+
+        <svg class="number-line" viewBox="0 0 500 115" id="numberLineSvg">
+            <line x1="25" y1="48" x2="475" y2="48" stroke="#777580" stroke-width="2"/>
+            <g id="numberTicks"></g>
+
+            <line id="distanceLine" x1="250" y1="25" x2="92.5" y2="25"
+                stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+
+            <circle cx="250" cy="48" r="5" fill="#FFD93D" stroke="#28243D"/>
+
+            <circle id="numberPoint" cx="92.5" cy="48" r="7"
+                fill="#FF6B6B" stroke="#28243D" stroke-width="1.5"/>
+
+            <text x="250" y="15" text-anchor="middle" font-size="10" fill="#686477">ZERO</text>
+
+            <text id="pointLabel" x="92.5" y="85" text-anchor="middle"
+                font-size="12" font-weight="bold" fill="#845EC2">x = -7</text>
+        </svg>
+
+        <div class="explorer-results">
+            <div class="result-stat">
+                <span>Selected Number (x)</span>
+                <strong id="selectedNumber">-7</strong>
+            </div>
+            <div class="result-stat">
+                <span>Absolute Value |x|</span>
+                <strong id="absoluteResult">7</strong>
+            </div>
+        </div>
+
+        <div class="result-box">
+            <div class="result-text" id="distanceExplanation">
+                Jarak dari -7 menuju nol adalah 7 satuan.
+            </div>
+        </div>
+
+        <div class="action-row">
+            <button class="action-button secondary" onclick="setNumber(-5)">Try -5</button>
+            <button class="action-button secondary" onclick="setNumber(0)">Try 0</button>
+            <button class="action-button secondary" onclick="setNumber(4)">Try 4</button>
+            <button class="action-button secondary" onclick="setNumber(8)">Try 8</button>
+        </div>
+    </div>
+
+    <div class="definition-box">
+        <h3 class="card-title">What can you conclude?</h3>
+        <p class="card-description">
+            Perhatikan bahwa -7 dan 7 memiliki nilai mutlak
+            yang sama, yaitu 7. Keduanya berada pada jarak
+            yang sama dari nol, tetapi pada arah berlawanan.
+            Nilai mutlak selalu bernilai positif atau nol.
+        </p>
+        <div class="hero-formula" style="font-size:30px;">
+            <span>|x| ≥ 0</span>
+        </div>
+    </div>
+</section>
+
+<!-- 02 GENERAL FORM -->
+
+<section class="section" id="bentuk-umum">
+    <div class="section-heading">
+        <div class="section-number">02</div>
+        <div><h2>Bentuk Umum Nilai Mutlak</h2></div>
+    </div>
+
+    <p class="intro-text">
+        Nilai mutlak memiliki aturan berdasarkan tanda
+        bilangan di dalamnya. Jika bilangan tidak negatif,
+        nilainya tetap. Jika negatif, tandanya berubah
+        menjadi positif.
+    </p>
+
+    <div class="definition-box">
+        <div class="interactive-label">THE GENERAL DEFINITION</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,4vw,30px);font-weight:700;text-align:center;margin:15px 0;">
+            |x| =
+        </div>
+
+        <div class="piecewise">
+            <div class="piece">
+                <div class="interactive-label">WHEN x ≥ 0</div>
+                <strong>|x| = x</strong>
+                <p>Jika x positif atau nol, nilai mutlaknya sama dengan bilangan tersebut.</p>
+            </div>
+            <div class="piece">
+                <div class="interactive-label">WHEN x &lt; 0</div>
+                <strong>|x| = -x</strong>
+                <p>Jika x negatif, nilai mutlaknya adalah lawan dari bilangan tersebut.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="interactive-card">
+        <div class="interactive-label">ABSOLUTE VALUE CALCULATOR</div>
+        <h3 class="card-title">Calculate it yourself!</h3>
+        <p class="card-description">
+            Masukkan bilangan apa saja. Sistem akan menentukan
+            aturan yang digunakan dan menampilkan prosesnya.
+        </p>
+
+        <div class="calculator-grid">
+            <div class="calculator-input">
+                <label for="calcInput" style="font-size:11px;font-weight:800;">ENTER A NUMBER</label>
+                <input type="number" id="calcInput" value="-8" step="any" style="margin-top:12px;">
+                <button class="action-button" onclick="calculateAbsolute()" style="margin-top:12px;width:100%;">
+                    Calculate →
+                </button>
+            </div>
+
+            <div class="calculator-output">
+                <div class="interactive-label">CALCULATION RESULT</div>
+                <div class="calculator-equation" id="calcEquation">|-8| = 8</div>
+                <p class="card-description" id="calcExplanation">
+                    Karena -8 negatif, gunakan aturan |x| = -x.
+                    Jadi |-8| = -(-8) = 8.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 DOMAIN RANGE -->
+
+<section class="section" id="domain-range">
+    <div class="section-heading">
+        <div class="section-number">03</div>
+        <div><h2>Domain dan Range</h2></div>
+    </div>
+
+    <p class="intro-text">
+        Dalam suatu fungsi, kita mengenal dua istilah penting:
+        domain sebagai himpunan nilai masukan dan range sebagai
+        himpunan nilai keluaran.
+    </p>
+
+    <div class="domain-grid">
+        <div class="domain-card">
+            <div class="interactive-label">DOMAIN · INPUT</div>
+            <h3>Daerah Asal</h3>
+            <div class="domain-value">D = ℝ</div>
+            <p>
+                Semua bilangan real dapat dimasukkan ke dalam
+                fungsi nilai mutlak, termasuk bilangan negatif,
+                nol, dan positif.
+            </p>
+        </div>
+
+        <div class="domain-card">
+            <div class="interactive-label">RANGE · OUTPUT</div>
+            <h3>Daerah Hasil</h3>
+            <div class="domain-value">R = y ≥ 0</div>
+            <p>Hasil fungsi nilai mutlak selalu nol atau lebih besar dari nol.</p>
+        </div>
+    </div>
+
+    <div class="interactive-card">
+        <div class="interactive-label">INPUT - OUTPUT EXPLORER</div>
+        <h3 class="card-title">Let's make a function table!</h3>
+        <p class="card-description">
+            Masukkan nilai x, kemudian lihat hasil f(x) = |x|.
+            Cobalah beberapa nilai untuk memahami hubungan
+            antara domain dan range.
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px;">
+            <input type="number" id="tableInput" value="-3" step="any" style="max-width:180px;">
+            <button class="action-button" onclick="addTableValue()">Add to Table +</button>
+            <button class="action-button secondary" onclick="resetTable()">Reset</button>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Domain (x)</th><th>Function</th><th>Range f(x)</th></tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr><td>-3</td><td>|-3|</td><td class="highlight-cell">3</td></tr>
+                    <tr><td>-2</td><td>|-2|</td><td class="highlight-cell">2</td></tr>
+                    <tr><td>-1</td><td>|-1|</td><td class="highlight-cell">1</td></tr>
+                    <tr><td>0</td><td>|0|</td><td class="highlight-cell">0</td></tr>
+                    <tr><td>1</td><td>|1|</td><td class="highlight-cell">1</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="result-box">
+            <p class="result-text" id="tableExplanation">
+                Coba perhatikan: nilai input yang berbeda bisa menghasilkan output yang sama.
+                Contohnya, f(-3) = f(3) = 3.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 04 GRAPH CHARACTERISTICS -->
+
+<section class="section" id="ciri-grafik">
+    <div class="section-heading">
+        <div class="section-number">04</div>
+        <div><h2>Ciri-Ciri Grafik Nilai Mutlak</h2></div>
+    </div>
+
+    <p class="intro-text">
+        Fungsi dasar f(x) = |x| memiliki grafik berbentuk huruf V.
+        Mari amati beberapa karakteristiknya melalui visualisasi di bawah ini.
+    </p>
+
+    <div class="graph-layout">
+        <div class="graph-panel">
+            <div class="interactive-label">GRAPH: f(x) = |x|</div>
+
+            <svg viewBox="0 0 400 330" id="featureGraph">
+                <defs>
+                    <pattern id="graphGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+                        <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#DDD9E5" stroke-width="1"/>
+                    </pattern>
+                </defs>
+
+                <rect x="25" y="15" width="350" height="275" fill="url(#graphGrid)"/>
+                <line x1="25" y1="240" x2="375" y2="240" stroke="#777580" stroke-width="1.5"/>
+                <line x1="200" y1="15" x2="200" y2="290" stroke="#777580" stroke-width="1.5"/>
+
+                <text x="380" y="245" font-size="12" fill="#777580">x</text>
+                <text x="208" y="12" font-size="12" fill="#777580">y</text>
+                <text x="208" y="253" font-size="10" fill="#777580">0</text>
+
+                <path d="M 75 65 L 200 240 L 325 65" fill="none"
+                    stroke="#FF6B6B" stroke-width="4" stroke-linecap="round" id="mainCurve"/>
+
+                <circle cx="200" cy="240" r="7" fill="#FFD93D"
+                    stroke="#28243D" stroke-width="1.5" id="vertexPoint"/>
+
+                <line x1="200" y1="20" x2="200" y2="285"
+                    stroke="#FF8FAB" stroke-width="2" stroke-dasharray="6 5"
+                    id="symmetryLine" opacity="0"/>
+
+                <circle cx="200" cy="240" r="12" fill="none"
+                    stroke="#845EC2" stroke-width="2" id="vertexHighlight" opacity="0"/>
+
+                <text x="210" y="270" font-size="10" fill="#845EC2"
+                    id="vertexLabel" opacity="0">(0,0)</text>
+            </svg>
+
+            <div class="graph-buttons">
+                <button class="active" onclick="showGraphFeature('all',this)">Full Graph</button>
+                <button onclick="showGraphFeature('vertex',this)">Vertex</button>
+                <button onclick="showGraphFeature('symmetry',this)">Symmetry</button>
+                <button onclick="showGraphFeature('shape',this)">V-Shape</button>
+            </div>
+        </div>
+
+        <div class="graph-info">
+            <div class="interactive-label">GRAPH EXPLORER</div>
+            <h3 id="graphTitle">The Absolute Value Graph</h3>
+            <p id="graphDescription">
+                Grafik fungsi dasar f(x) = |x| berbentuk huruf V.
+                Titik terendahnya berada pada koordinat (0,0).
+                Pilih tombol di samping grafik untuk melihat karakteristik tertentu.
+            </p>
+            <div class="graph-highlight" id="graphFact">
+                <strong>Remember:</strong><br>
+                Grafik dasar nilai mutlak tidak pernah berada di bawah sumbu X.
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">V</div>
+            <div><h3>Berbentuk Huruf V</h3><p>Grafik terdiri atas dua bagian garis lurus yang bertemu.</p></div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">●</div>
+            <div><h3>Titik Minimum (0,0)</h3><p>Titik puncak bawah menjadi nilai minimum fungsi dasar.</p></div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">↔</div>
+            <div><h3>Simetris terhadap Sumbu Y</h3><p>Bagian kiri dan kanan grafik merupakan bayangan cermin.</p></div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">↑</div>
+            <div><h3>Range Tidak Negatif</h3><p>Semua titik grafik berada di atas atau tepat pada sumbu X.</p></div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">∞</div>
+            <div><h3>Domain Seluruh Real</h3><p>Fungsi dapat menerima semua nilai x bilangan real.</p></div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">±</div>
+            <div><h3>Dua Gradien</h3><p>Gradien bagian kiri adalah -1 dan bagian kanan adalah 1.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 MISCONCEPTIONS -->
+
+<section class="section" id="miskonsepsi">
+    <div class="section-heading">
+        <div class="section-number">05</div>
+        <div><h2>Miskonsepsi Nilai Mutlak</h2></div>
+    </div>
+
+    <p class="intro-text">
+        Apakah semua pernyataan berikut benar?
+        Pilih TRUE atau FALSE dan lihat pembahasannya.
+    </p>
+
+    <div class="myth-list">
+        <div class="myth">
+            <div class="interactive-label">STATEMENT 01</div>
+            <div class="myth-question">|-8| = -8 karena bilangan di dalam tanda mutlak adalah negatif.</div>
+            <div class="action-row">
+                <button class="action-button secondary" onclick="checkMyth(0,true)">TRUE</button>
+                <button class="action-button secondary" onclick="checkMyth(0,false)">FALSE</button>
+            </div>
+            <div class="myth-feedback" id="mythFeedback0">
+                <strong>Jawaban: FALSE.</strong><br>
+                |-8| = 8 karena nilai mutlak menyatakan jarak dari nol dan jarak tidak mungkin negatif.
+            </div>
+        </div>
+
+        <div class="myth">
+            <div class="interactive-label">STATEMENT 02</div>
+            <div class="myth-question">Domain fungsi f(x) = |x| adalah seluruh bilangan real.</div>
+            <div class="action-row">
+                <button class="action-button secondary" onclick="checkMyth(1,true)">TRUE</button>
+                <button class="action-button secondary" onclick="checkMyth(1,false)">FALSE</button>
+            </div>
+            <div class="myth-feedback" id="mythFeedback1">
+                <strong>Jawaban: TRUE.</strong><br>
+                Semua bilangan real dapat dimasukkan ke dalam fungsi nilai mutlak.
+            </div>
+        </div>
+
+        <div class="myth">
+            <div class="interactive-label">STATEMENT 03</div>
+            <div class="myth-question">Grafik fungsi f(x) = |x| memiliki range seluruh bilangan real.</div>
+            <div class="action-row">
+                <button class="action-button secondary" onclick="checkMyth(2,true)">TRUE</button>
+                <button class="action-button secondary" onclick="checkMyth(2,false)">FALSE</button>
+            </div>
+            <div class="myth-feedback" id="mythFeedback2">
+                <strong>Jawaban: FALSE.</strong><br>
+                Range fungsi dasar adalah y ≥ 0, karena hasil nilai mutlak tidak negatif.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 MINI QUIZ -->
+
+<section class="section" id="quiz">
+    <div class="section-heading">
+        <div class="section-number">06</div>
+        <div><h2>Mini Quiz Challenge</h2></div>
+    </div>
+
+    <p class="intro-text">
+        Sudah memahami konsepnya? Sekarang uji pemahamanmu
+        melalui lima pertanyaan singkat berikut.
+    </p>
+
+    <div class="quiz-card">
+        <div class="quiz-top">
+            <span id="quizCounter">QUESTION 1 / 5</span>
+            <span id="quizScore">SCORE: 0</span>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="quizProgress"></div>
+        </div>
+
+        <div class="quiz-question" id="quizQuestion">Berapakah nilai dari |-9|?</div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback"></div>
+
+        <div class="quiz-footer">
+            <span style="font-size:10px;color:var(--muted);" id="quizInstruction">
+                Select one answer to continue.
+            </span>
+            <button class="action-button" id="nextQuestion" onclick="nextQuiz()" disabled>
+                Next Question →
+            </button>
+        </div>
+
+        <div class="quiz-result" id="quizResult">
+            <div class="interactive-label">QUIZ COMPLETED!</div>
+            <h3>Great Job!</h3>
+            <strong id="finalScore">0 / 5</strong>
+            <p class="card-description" id="finalMessage"></p>
+            <button class="action-button" onclick="restartQuiz()" style="margin-top:17px;">
+                Try Again ↻
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- SUMMARY -->
+
+<section class="section">
+    <div class="summary">
+        <h2>✳ Let's Remember!</h2>
+        <ul>
+            <li>Nilai mutlak merupakan jarak bilangan terhadap nol.</li>
+            <li>Nilai mutlak selalu bernilai positif atau nol.</li>
+            <li>Jika x ≥ 0, maka |x| = x.</li>
+            <li>Jika x &lt; 0, maka |x| = -x.</li>
+            <li>Domain fungsi dasar adalah seluruh bilangan real.</li>
+            <li>Range fungsi dasar adalah y ≥ 0.</li>
+            <li>Grafik berbentuk V dan memiliki titik minimum (0,0).</li>
+        </ul>
+        <div class="summary-note">"Don't just memorize mathematics. Understand it!"</div>
+    </div>
+</section>
+
+<div class="bottom-nav">
+    <a href="opening.html" class="nav-button back">← BACK: HOMEPAGE </a>
+    <a href="DemonstrasiGrafik.html" class="nav-button next">NEXT: CHAPTER 02→</a>
+</div>
+
+</main>
+
+<footer>
+    <span><strong>MATHEMATICS XI G</strong> · Absolute Value Learning</span>
+    <span>Learn · Explore · Understand</span>
+</footer>
+
+<script>
+
+/* 01. NUMBER LINE EXPLORER */
+
+const slider = document.getElementById("numberSlider");
+const ticks = document.getElementById("numberTicks");
+
+for(let i=-10;i<=10;i++){
+    const x = 250 + i*22.5;
+    ticks.innerHTML += `
+        <line x1="${x}" y1="43" x2="${x}" y2="53"
+            stroke="#686477" stroke-width="1"/>
+        <text x="${x}" y="70" text-anchor="middle"
+            font-size="9" fill="#686477">${i}</text>
+    `;
+}
+
+function updateNumberLine(){
+    const x = Number(slider.value);
+    const absolute = Math.abs(x);
+    const pointX = 250 + x*22.5;
+
+    document.getElementById("numberDisplay").textContent = x;
+    document.getElementById("selectedNumber").textContent = x;
+    document.getElementById("absoluteResult").textContent = absolute;
+
+    document.getElementById("numberPoint").setAttribute("cx",pointX);
+    document.getElementById("pointLabel").setAttribute("x",pointX);
+    document.getElementById("pointLabel").textContent = "x = " + x;
+
+    document.getElementById("distanceLine").setAttribute("x1",250);
+    document.getElementById("distanceLine").setAttribute("x2",pointX);
+
+    document.getElementById("distanceExplanation").innerHTML =
+        `Bilangan ${x} memiliki jarak <strong>${absolute} satuan</strong> dari nol.
+        Jadi, |${x}| = ${absolute}.`;
+}
+
+slider.addEventListener("input",updateNumberLine);
+
+function setNumber(value){
+    slider.value = value;
+    updateNumberLine();
+}
+
+updateNumberLine();
+
+
+/* 02. ABSOLUTE VALUE CALCULATOR */
+
+function calculateAbsolute(){
+    const input = document.getElementById("calcInput");
+    const value = input.value.trim();
+
+    if(value === "" || !Number.isFinite(Number(value))){
+        alert("Masukkan bilangan yang valid terlebih dahulu.");
+        return;
+    }
+
+    const x = Number(value);
+    const result = Math.abs(x);
+
+    let equation;
+    let explanation;
+
+    if(x > 0){
+        equation = `|${x}| = ${result}`;
+        explanation = `Karena ${x} positif, gunakan aturan |x| = x. Jadi, |${x}| = ${result}.`;
+    }else if(x < 0){
+        equation = `|${x}| = -(${x}) = ${result}`;
+        explanation = `Karena ${x} negatif, gunakan aturan |x| = -x. Jadi, -(${x}) = ${result}.`;
+    }else{
+        equation = `|0| = 0`;
+        explanation = `Karena x = 0, nilai mutlaknya juga 0.`;
+    }
+
+    document.getElementById("calcEquation").textContent = equation;
+    document.getElementById("calcExplanation").textContent = explanation;
+}
+
+
+/* 03. DOMAIN & RANGE TABLE */
+
+let tableValues = [-3,-2,-1,0,1];
+
+function renderTable(){
+    const body = document.getElementById("tableBody");
+    body.innerHTML = "";
+
+    tableValues.forEach(value=>{
+        const row = document.createElement("tr");
+        const inputCell = document.createElement("td");
+        const functionCell = document.createElement("td");
+        const outputCell = document.createElement("td");
+
+        inputCell.textContent = value;
+        functionCell.textContent = `|${value}|`;
+        outputCell.textContent = Math.abs(value);
+        outputCell.className = "highlight-cell";
+
+        row.append(inputCell,functionCell,outputCell);
+        body.appendChild(row);
+    });
+
+    const positive = tableValues.some(x=>x>0);
+    const negative = tableValues.some(x=>x<0);
+
+    let message = "Perhatikan bahwa nilai input yang berbeda dapat menghasilkan output yang sama.";
+
+    if(positive && negative){
+        message += " Contohnya, f(-3) = f(3) = 3.";
+    }
+
+    document.getElementById("tableExplanation").textContent = message;
+}
+
+function addTableValue(){
+    const input = document.getElementById("tableInput");
+    const value = input.value.trim();
+
+    if(value === "" || !Number.isFinite(Number(value))){
+        alert("Masukkan angka yang valid.");
+        return;
+    }
+
+    const number = Number(value);
+
+    if(tableValues.includes(number)){
+        alert("Angka tersebut sudah ada di tabel.");
+        return;
+    }
+
+    if(tableValues.length >= 8){
+        alert("Maksimal 8 nilai dalam tabel.");
+        return;
+    }
+
+    tableValues.push(number);
+    tableValues.sort((a,b)=>a-b);
+    renderTable();
+    input.value = "";
+}
+
+function resetTable(){
+    tableValues = [-3,-2,-1,0,1];
+    renderTable();
+}
+
+renderTable();
+
+
+/* 04. GRAPH FEATURE EXPLORER */
+
+function showGraphFeature(feature,button){
+    const title = document.getElementById("graphTitle");
+    const description = document.getElementById("graphDescription");
+    const fact = document.getElementById("graphFact");
+
+    const vertex = document.getElementById("vertexHighlight");
+    const vertexLabel = document.getElementById("vertexLabel");
+    const symmetry = document.getElementById("symmetryLine");
+    const curve = document.getElementById("mainCurve");
+
+    document.querySelectorAll(".graph-buttons button")
+        .forEach(btn=>btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    vertex.setAttribute("opacity","0");
+    vertexLabel.setAttribute("opacity","0");
+    symmetry.setAttribute("opacity","0");
+    curve.setAttribute("stroke","#FF6B6B");
+
+    if(feature === "all"){
+        title.textContent = "The Absolute Value Graph";
+        description.textContent =
+            "Grafik fungsi dasar f(x) = |x| berbentuk huruf V. Titik terendahnya berada pada koordinat (0,0).";
+        fact.innerHTML =
+            "<strong>Remember:</strong><br>Grafik dasar nilai mutlak tidak pernah berada di bawah sumbu X.";
+    }else if(feature === "vertex"){
+        title.textContent = "Vertex / Titik Puncak";
+        description.textContent =
+            "Titik puncak grafik dasar berada di koordinat (0,0). Titik ini merupakan titik minimum karena menghasilkan nilai y terkecil.";
+        fact.innerHTML =
+            "<strong>Vertex = (0,0)</strong><br>Nilai minimum fungsi adalah 0.";
+        vertex.setAttribute("opacity","1");
+        vertexLabel.setAttribute("opacity","1");
+    }else if(feature === "symmetry"){
+        title.textContent = "Line of Symmetry";
+        description.textContent =
+            "Grafik simetris terhadap sumbu Y. Artinya, nilai fungsi pada x dan -x selalu sama.";
+        fact.innerHTML =
+            "<strong>f(-x) = f(x)</strong><br>Contoh: f(-4) = f(4) = 4.";
+        symmetry.setAttribute("opacity","1");
+    }else if(feature === "shape"){
+        title.textContent = "The V-Shape";
+        description.textContent =
+            "Grafik terdiri atas dua bagian linear. Bagian kiri menurun menuju titik minimum, sedangkan bagian kanan meningkat.";
+        fact.innerHTML =
+            "<strong>Gradien:</strong><br>Bagian kiri = -1 dan bagian kanan = 1.";
+        curve.setAttribute("stroke","#845EC2");
+    }
+}
+
+
+/* 05. MYTH BUSTER */
+
+const mythAnswers = [false,true,false];
+
+const mythExplanations = [
+    "|-8| = 8 karena nilai mutlak menyatakan jarak dari nol dan jarak tidak mungkin negatif.",
+    "Benar. Semua bilangan real dapat dimasukkan ke fungsi f(x) = |x|.",
+    "Salah. Range fungsi dasar adalah y ≥ 0, karena hasil nilai mutlak tidak negatif."
+];
+
+function checkMyth(index,answer){
+    const feedback = document.getElementById("mythFeedback"+index);
+    const isCorrect = answer === mythAnswers[index];
+
+    feedback.className = "myth-feedback show " + (isCorrect ? "correct" : "wrong");
+    feedback.innerHTML =
+        `<strong>${isCorrect ? "✓ Correct!" : "✕ Not quite!"}</strong><br>
+        ${mythExplanations[index]}`;
+}
+
+
+/* 06. MINI QUIZ */
+
+const questions = [
+    {
+        question:"Berapakah nilai dari |-9|?",
+        options:["-9","9","0","18"],
+        answer:1,
+        explanation:"Nilai mutlak menyatakan jarak dari nol. Jadi, |-9| = 9."
+    },
+    {
+        question:"Berapakah hasil dari |5 - 12|?",
+        options:["-7","7","17","-17"],
+        answer:1,
+        explanation:"5 - 12 = -7. Kemudian |-7| = 7."
+    },
+    {
+        question:"Domain fungsi f(x) = |x| adalah...",
+        options:["x ≥ 0","x ≤ 0","Semua bilangan real","Bilangan positif saja"],
+        answer:2,
+        explanation:"Semua bilangan real dapat menjadi input fungsi nilai mutlak."
+    },
+    {
+        question:"Range fungsi f(x) = |x| adalah...",
+        options:["y ≤ 0","y ≥ 0","Semua bilangan real","y > 0"],
+        answer:1,
+        explanation:"Nilai mutlak tidak pernah negatif. Range-nya adalah y ≥ 0."
+    },
+    {
+        question:"Titik minimum grafik f(x) = |x| berada di...",
+        options:["(1,0)","(0,1)","(0,0)","(-1,1)"],
+        answer:2,
+        explanation:"Grafik dasar memiliki titik minimum di koordinat (0,0)."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function renderQuiz(){
+    const question = questions[currentQuestion];
+    answered = false;
+
+    document.getElementById("quizCounter").textContent =
+        `QUESTION ${currentQuestion+1} / ${questions.length}`;
+
+    document.getElementById("quizScore").textContent = `SCORE: ${score}`;
+
+    document.getElementById("quizProgress").style.width =
+        `${currentQuestion/questions.length*100}%`;
+
+    document.getElementById("quizQuestion").textContent = question.question;
+    document.getElementById("quizFeedback").className = "quiz-feedback";
+    document.getElementById("quizFeedback").textContent = "";
+
+    document.getElementById("nextQuestion").disabled = true;
+    document.getElementById("nextQuestion").textContent =
+        currentQuestion === questions.length-1 ? "See Results →" : "Next Question →";
+
+    document.getElementById("quizInstruction").textContent =
+        "Select one answer to continue.";
+
+    const options = document.getElementById("quizOptions");
+    options.innerHTML = "";
+
+    question.options.forEach((option,index)=>{
+        const button = document.createElement("button");
+        button.className = "quiz-option";
+        button.textContent = String.fromCharCode(65+index)+". "+option;
+        button.onclick = ()=>selectAnswer(index);
+        options.appendChild(button);
+    });
+}
+
+function selectAnswer(index){
+    if(answered) return;
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+    const buttons = document.querySelectorAll(".quiz-option");
+    const correct = index === question.answer;
+
+    if(correct) score++;
+
+    buttons.forEach((button,i)=>{
+        button.disabled = true;
+
+        if(i === question.answer){
+            button.classList.add("correct-answer");
+        }else if(i === index && !correct){
+            button.classList.add("wrong-answer");
+        }
+    });
+
+    const feedback = document.getElementById("quizFeedback");
+    feedback.className = "quiz-feedback show";
+    feedback.innerHTML =
+        `<strong>${correct ? "✓ Correct!" : "✕ Incorrect!"}</strong><br>${question.explanation}`;
+
+    document.getElementById("quizScore").textContent = `SCORE: ${score}`;
+    document.getElementById("nextQuestion").disabled = false;
+    document.getElementById("quizInstruction").textContent =
+        "Your answer has been recorded.";
+}
+
+function nextQuiz(){
+    if(!answered) return;
+
+    if(currentQuestion < questions.length-1){
+        currentQuestion++;
+        renderQuiz();
+    }else{
+        finishQuiz();
+    }
+}
+
+function finishQuiz(){
+    document.getElementById("quizProgress").style.width = "100%";
+    document.getElementById("quizQuestion").style.display = "none";
+    document.getElementById("quizOptions").style.display = "none";
+    document.getElementById("quizFeedback").style.display = "none";
+    document.querySelector(".quiz-footer").style.display = "none";
+    document.getElementById("quizResult").classList.add("show");
+
+    document.getElementById("finalScore").textContent =
+        `${score} / ${questions.length}`;
+
+    let message;
+
+    if(score === 5){
+        message = "Excellent! Kamu sudah memahami konsep dasar nilai mutlak dengan sangat baik.";
+    }else if(score >= 3){
+        message = "Good job! Pemahamanmu sudah cukup baik. Coba pelajari kembali bagian yang masih membingungkan.";
+    }else{
+        message = "Keep learning! Tidak apa-apa jika masih ada kesalahan. Pelajari kembali materinya dan coba lagi.";
+    }
+
+    document.getElementById("finalMessage").textContent = message;
+}
+
+function restartQuiz(){
+    currentQuestion = 0;
+    score = 0;
+    answered = false;
+
+    document.getElementById("quizQuestion").style.display = "block";
+    document.getElementById("quizOptions").style.display = "grid";
+    document.getElementById("quizFeedback").style.display = "";
+    document.querySelector(".quiz-footer").style.display = "flex";
+    document.getElementById("quizResult").classList.remove("show");
+
+    renderQuiz();
+}
+
+renderQuiz();
+
+</script>
+</body>
+</html>
