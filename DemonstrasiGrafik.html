@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Chapter 02 — Demonstrasi Grafik</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,11 +29,7 @@
 --red:#FFE0E0;
 }
 
-* {
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 html {
 scroll-behavior:smooth;
@@ -50,17 +44,9 @@ overflow-x:hidden;
 line-height:1.7;
 }
 
-button,input {
-font:inherit;
-}
-
-button {
-cursor:pointer;
-}
-
-h1,h2,h3 {
-font-family:'Space Grotesk',sans-serif;
-}
+button,input { font:inherit; }
+button { cursor:pointer; }
+h1,h2,h3 { font-family:'Space Grotesk',sans-serif; }
 
 body::before {
 content:"";
@@ -72,10 +58,7 @@ background-image:radial-gradient(#A9A3B5 .7px,transparent .7px);
 background-size:17px 17px;
 }
 
-/* =========================
-NAVIGATION
-========================= */
-
+/* NAVIGATION */
 .navbar {
 width:100%;
 max-width:1200px;
@@ -91,7 +74,6 @@ top:0;
 z-index:100;
 backdrop-filter:blur(12px);
 }
-
 .logo {
 display:flex;
 align-items:center;
@@ -101,7 +83,6 @@ font-size:15px;
 font-weight:800;
 letter-spacing:1px;
 }
-
 .logo-icon {
 width:39px;
 height:39px;
@@ -110,28 +91,16 @@ place-items:center;
 background:var(--yellow);
 border:2px solid var(--ink);
 }
-
-.nav-links {
-display:flex;
-gap:20px;
-align-items:center;
-}
-
+.nav-links { display:flex; gap:20px; align-items:center; }
 .nav-links a {
 text-decoration:none;
 color:var(--muted);
 font-size:10px;
 font-weight:800;
 }
+.nav-links a:hover { color:var(--coral); }
 
-.nav-links a:hover {
-color:var(--coral);
-}
-
-/* =========================
-HERO
-========================= */
-
+/* HERO */
 .hero {
 width:100%;
 max-width:1200px;
@@ -142,7 +111,6 @@ grid-template-columns:1fr .8fr;
 gap:45px;
 align-items:center;
 }
-
 .chapter-label {
 display:inline-flex;
 align-items:center;
@@ -156,7 +124,6 @@ font-weight:800;
 letter-spacing:1.5px;
 margin-bottom:22px;
 }
-
 .chapter-label span {
 width:8px;
 height:8px;
@@ -164,33 +131,28 @@ background:var(--coral);
 border:1px solid var(--ink);
 border-radius:50%;
 }
-
 .hero-subtitle {
 font-family:'Patrick Hand',cursive;
 font-size:22px;
 color:var(--purple);
 margin-bottom:10px;
 }
-
 .hero h1 {
 font-size:clamp(35px,5vw,57px);
 line-height:1.08;
 letter-spacing:-2px;
 margin-bottom:18px;
 }
-
 .hero h1 span {
 color:var(--coral);
 text-shadow:3px 3px 0 var(--yellow);
 }
-
 .hero p {
 color:var(--muted);
 font-size:13px;
 line-height:1.9;
 max-width:540px;
 }
-
 .hero-meta {
 margin-top:20px;
 color:var(--purple);
@@ -198,7 +160,6 @@ font-size:9px;
 font-weight:800;
 letter-spacing:1.2px;
 }
-
 .hero-card {
 background:white;
 border:2px solid var(--ink);
@@ -206,7 +167,6 @@ padding:27px;
 box-shadow:8px 8px 0 var(--turquoise);
 position:relative;
 }
-
 .hero-sticker {
 position:absolute;
 top:-18px;
@@ -221,7 +181,6 @@ font-size:22px;
 transform:rotate(9deg);
 box-shadow:3px 3px 0 var(--ink);
 }
-
 .hero-card-top {
 display:flex;
 justify-content:space-between;
@@ -232,26 +191,20 @@ font-size:9px;
 font-weight:800;
 letter-spacing:1px;
 }
-
 .hero-card-top span:last-child {
 color:var(--coral);
 font-family:'Patrick Hand',cursive;
 font-size:16px;
 }
-
 .hero-formula {
-    text-align:center;
-    font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(19px,3.5vw,40px);
-    font-weight:700;
-    margin:30px 0 8px;
-    white-space:nowrap;
+text-align:center;
+font-family:'Space Grotesk',sans-serif;
+font-size:clamp(19px,3.5vw,40px);
+font-weight:700;
+margin:30px 0 8px;
+white-space:nowrap;
 }
-
-.hero-formula span {
-    color:var(--coral);
-}
-
+.hero-formula span { color:var(--coral); }
 .hero-note {
 text-align:center;
 color:var(--muted);
@@ -259,22 +212,17 @@ font-family:'Patrick Hand',cursive;
 font-size:18px;
 }
 
-/* =========================
-MAIN
-========================= */
-
+/* MAIN */
 .container {
 width:100%;
 max-width:1200px;
 margin:auto;
 padding:35px 7% 85px;
 }
-
 .section {
 margin-bottom:80px;
 scroll-margin-top:100px;
 }
-
 .section-tag {
 display:inline-block;
 color:var(--purple);
@@ -283,14 +231,12 @@ font-weight:800;
 letter-spacing:1.5px;
 margin-bottom:8px;
 }
-
 .section-heading {
 display:flex;
 align-items:center;
 gap:14px;
 margin-bottom:20px;
 }
-
 .section-number {
 width:45px;
 height:45px;
@@ -303,24 +249,10 @@ box-shadow:3px 3px 0 var(--ink);
 font-family:'Space Grotesk',sans-serif;
 font-weight:800;
 }
-
-.section:nth-of-type(3n+1) .section-number {
-background:var(--coral);
-}
-
-.section:nth-of-type(3n+2) .section-number {
-background:var(--yellow);
-}
-
-.section:nth-of-type(3n) .section-number {
-background:var(--lavender);
-}
-
-.section h2 {
-font-size:23px;
-letter-spacing:-.6px;
-}
-
+.section:nth-of-type(3n+1) .section-number { background:var(--coral); }
+.section:nth-of-type(3n+2) .section-number { background:var(--yellow); }
+.section:nth-of-type(3n) .section-number { background:var(--lavender); }
+.section h2 { font-size:23px; letter-spacing:-.6px; }
 .section-desc {
 color:var(--muted);
 font-size:13px;
@@ -329,10 +261,7 @@ max-width:700px;
 margin-bottom:24px;
 }
 
-/* =========================
-CARDS
-========================= */
-
+/* CARDS */
 .card {
 background:white;
 border:2px solid var(--ink);
@@ -340,18 +269,8 @@ padding:25px;
 box-shadow:4px 4px 0 var(--border);
 margin-bottom:20px;
 }
-
-.card h3 {
-font-size:16px;
-margin-bottom:8px;
-}
-
-.card p {
-font-size:12px;
-color:var(--muted);
-line-height:1.9;
-}
-
+.card h3 { font-size:16px; margin-bottom:8px; }
+.card p { font-size:12px; color:var(--muted); line-height:1.9; }
 .formula-box {
 background:var(--yellow);
 border:2px solid var(--ink);
@@ -360,13 +279,11 @@ padding:25px;
 margin:20px 0;
 box-shadow:4px 4px 0 var(--ink);
 }
-
 .formula {
 font-family:'Space Grotesk',sans-serif;
 font-size:clamp(23px,5vw,35px);
 font-weight:800;
 }
-
 .formula-caption {
 font-family:'Patrick Hand',cursive;
 font-size:17px;
@@ -374,10 +291,7 @@ color:var(--purple);
 margin-top:7px;
 }
 
-/* =========================
-CONNECTION GUIDE
-========================= */
-
+/* CONNECTION GUIDE */
 .connection-guide {
 display:flex;
 align-items:center;
@@ -388,7 +302,6 @@ border:2px solid var(--ink);
 box-shadow:4px 4px 0 var(--lavender);
 margin-bottom:22px;
 }
-
 .connection-icon {
 width:38px;
 height:38px;
@@ -399,67 +312,53 @@ background:var(--lavender);
 border:2px solid var(--ink);
 font-size:19px;
 }
-
 .connection-guide p {
 font-size:11px;
 color:var(--muted);
 line-height:1.8;
 }
+.connection-guide strong { color:var(--purple); }
 
-.connection-guide strong {
-color:var(--purple);
-}
-
-/* =========================
-PARAMETERS
-========================= */
-
+/* PARAMETERS */
 .parameter-grid {
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:16px;
 margin-top:20px;
 }
-
 .parameter-card {
 background:white;
 padding:20px;
 border:2px solid var(--ink);
 box-shadow:4px 4px 0 var(--border);
 transition:.2s;
+min-width:0;
 }
-
-.parameter-card:focus-within {
-box-shadow:5px 5px 0 var(--turquoise);
-}
-
+.parameter-card:focus-within { box-shadow:5px 5px 0 var(--turquoise); }
 .parameter-card h3 {
 color:var(--purple);
 font-size:23px;
 margin-bottom:5px;
 }
-
 .parameter-card p {
 font-size:11px;
 color:var(--muted);
 line-height:1.8;
 margin-bottom:17px;
 }
-
 .parameter-value {
 font-family:'Space Grotesk',sans-serif;
 font-size:29px;
 font-weight:800;
 color:var(--coral);
 margin-bottom:10px;
+overflow-wrap:anywhere;
 }
-
 input[type="range"] {
 width:100%;
 accent-color:var(--coral);
 cursor:pointer;
 }
-
 .range-labels {
 display:flex;
 justify-content:space-between;
@@ -467,7 +366,6 @@ color:var(--muted);
 font-size:10px;
 margin-top:5px;
 }
-
 .parameter-note {
 margin-top:16px;
 padding:12px;
@@ -480,10 +378,7 @@ line-height:1.8;
 min-height:66px;
 }
 
-/* =========================
-FUNCTION DISPLAY
-========================= */
-
+/* FUNCTION DISPLAY */
 .function-display {
 background:var(--ink);
 color:white;
@@ -492,35 +387,29 @@ padding:25px;
 margin-top:22px;
 box-shadow:6px 6px 0 var(--turquoise);
 }
-
 .function-display small {
 color:var(--yellow);
 font-size:9px;
 font-weight:800;
 letter-spacing:1.5px;
 }
-
 .function-equation {
-    font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(16px,3.5vw,30px);
-    font-weight:800;
-    margin:13px 0;
-    white-space:nowrap;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding-bottom:5px;
+font-family:'Space Grotesk',sans-serif;
+font-size:clamp(16px,3.5vw,30px);
+font-weight:800;
+margin:13px 0;
+white-space:nowrap;
+overflow-x:auto;
+overflow-y:hidden;
+padding-bottom:5px;
 }
-
 .vertex-info {
 color:#D3D1EC;
 font-size:11px;
 line-height:1.8;
 }
 
-/* =========================
-BUTTONS
-========================= */
-
+/* BUTTONS */
 .action-button {
 border:2px solid var(--ink);
 padding:11px 16px;
@@ -531,18 +420,13 @@ font-weight:800;
 box-shadow:3px 3px 0 var(--ink);
 transition:.2s;
 }
-
 .action-button:hover {
 background:var(--coral);
 color:white;
 transform:translate(2px,2px);
 box-shadow:1px 1px 0 var(--ink);
 }
-
-.action-button.secondary {
-background:white;
-}
-
+.action-button.secondary { background:white; }
 .reset-btn {
 border:2px solid var(--ink);
 background:var(--yellow);
@@ -553,23 +437,15 @@ font-size:10px;
 box-shadow:3px 3px 0 var(--ink);
 transition:.2s;
 }
+.reset-btn:hover { background:var(--coral); color:white; }
 
-.reset-btn:hover {
-background:var(--coral);
-color:white;
-}
-
-/* =========================
-EXPERIMENT
-========================= */
-
+/* EXPERIMENT */
 .experiment-buttons {
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:13px;
 margin-top:20px;
 }
-
 .preset-btn {
 padding:16px;
 border:2px solid var(--ink);
@@ -582,18 +458,15 @@ color:var(--ink);
 text-align:left;
 transition:.2s;
 }
-
 .preset-btn:hover {
 background:#FFF8E8;
 transform:translate(2px,2px);
 box-shadow:1px 1px 0 var(--ink);
 }
-
 .preset-btn.active {
 background:var(--turquoise);
 box-shadow:3px 3px 0 var(--ink);
 }
-
 .preset-btn span {
 display:block;
 font-size:10px;
@@ -601,7 +474,6 @@ font-weight:500;
 color:var(--muted);
 margin-top:5px;
 }
-
 .active-preset {
 padding:17px;
 background:#FFF8E8;
@@ -609,12 +481,7 @@ border:2px solid var(--ink);
 box-shadow:4px 4px 0 var(--yellow);
 margin-top:22px;
 }
-
-.active-preset strong {
-color:var(--purple);
-font-size:12px;
-}
-
+.active-preset strong { color:var(--purple); font-size:12px; }
 .active-preset p {
 font-size:11px;
 color:var(--muted);
@@ -622,10 +489,7 @@ margin-top:6px;
 line-height:1.8;
 }
 
-/* =========================
-REFLECTION
-========================= */
-
+/* REFLECTION */
 .reflection {
 padding:23px;
 background:#FFF0D8;
@@ -633,71 +497,39 @@ border:2px solid var(--ink);
 box-shadow:4px 4px 0 var(--orange);
 margin-top:25px;
 }
-
 .reflection h3 {
 font-family:'Patrick Hand',cursive;
 font-size:22px;
 color:var(--purple);
 margin-bottom:8px;
 }
+.reflection p { color:var(--muted); font-size:12px; line-height:1.9; }
 
-.reflection p {
-color:var(--muted);
-font-size:12px;
-line-height:1.9;
-}
-
-/* =========================
-EXPLANATION
-========================= */
-
+/* EXPLANATION */
 .explanation-grid {
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:15px;
 }
-
 .explanation-item {
 background:white;
 border:2px solid var(--ink);
 padding:22px;
 box-shadow:4px 4px 0 var(--border);
 }
-
-.explanation-item:nth-child(1) {
-box-shadow:4px 4px 0 var(--coral);
-}
-
-.explanation-item:nth-child(2) {
-box-shadow:4px 4px 0 var(--turquoise);
-}
-
-.explanation-item:nth-child(3) {
-box-shadow:4px 4px 0 var(--lavender);
-}
-
+.explanation-item:nth-child(1) { box-shadow:4px 4px 0 var(--coral); }
+.explanation-item:nth-child(2) { box-shadow:4px 4px 0 var(--turquoise); }
+.explanation-item:nth-child(3) { box-shadow:4px 4px 0 var(--lavender); }
 .explanation-item .symbol {
 font-family:'Space Grotesk',sans-serif;
 font-size:30px;
 font-weight:800;
 color:var(--coral);
 }
+.explanation-item h3 { font-size:13px; margin:9px 0; }
+.explanation-item p { color:var(--muted); font-size:11px; line-height:1.9; }
 
-.explanation-item h3 {
-font-size:13px;
-margin:9px 0;
-}
-
-.explanation-item p {
-color:var(--muted);
-font-size:11px;
-line-height:1.9;
-}
-
-/* =========================
-DESMOS
-========================= */
-
+/* DESMOS */
 .desmos-card {
 background:var(--white);
 border:2px solid var(--ink);
@@ -705,17 +537,8 @@ padding:30px;
 text-align:center;
 box-shadow:6px 6px 0 var(--lavender);
 }
-
-.desmos-icon {
-font-size:42px;
-margin-bottom:12px;
-}
-
-.desmos-card h3 {
-font-size:19px;
-margin-bottom:10px;
-}
-
+.desmos-icon { font-size:42px; margin-bottom:12px; }
+.desmos-card h3 { font-size:19px; margin-bottom:10px; }
 .desmos-card p {
 color:var(--muted);
 font-size:12px;
@@ -723,7 +546,6 @@ line-height:1.9;
 max-width:500px;
 margin:0 auto 22px;
 }
-
 .desmos-button {
 display:inline-flex;
 align-items:center;
@@ -739,7 +561,6 @@ font-weight:800;
 box-shadow:4px 4px 0 var(--ink);
 transition:.2s;
 }
-
 .desmos-button:hover {
 background:var(--coral);
 color:white;
@@ -747,10 +568,7 @@ transform:translate(2px,2px);
 box-shadow:2px 2px 0 var(--ink);
 }
 
-/* =========================
-CONCLUSION
-========================= */
-
+/* CONCLUSION */
 .conclusion {
 background:var(--yellow);
 border:2px solid var(--ink);
@@ -758,17 +576,8 @@ padding:27px;
 box-shadow:6px 6px 0 var(--ink);
 margin-top:22px;
 }
-
-.conclusion h3 {
-font-size:18px;
-margin-bottom:12px;
-}
-
-.conclusion p {
-font-size:12px;
-line-height:1.9;
-}
-
+.conclusion h3 { font-size:18px; margin-bottom:12px; }
+.conclusion p { font-size:12px; line-height:1.9; }
 .conclusion-note {
 font-family:'Patrick Hand',cursive;
 font-size:19px;
@@ -776,10 +585,7 @@ color:var(--purple);
 margin-top:15px;
 }
 
-/* =========================
-CHAPTER NAVIGATION
-========================= */
-
+/* CHAPTER NAVIGATION */
 .chapter-navigation {
 display:flex;
 justify-content:space-between;
@@ -787,7 +593,6 @@ gap:15px;
 flex-wrap:wrap;
 margin-top:55px;
 }
-
 .chapter-navigation a {
 display:inline-flex;
 align-items:center;
@@ -802,15 +607,8 @@ font-weight:800;
 box-shadow:4px 4px 0 var(--ink);
 transition:.2s;
 }
-
-.chapter-navigation a:first-child {
-background:white;
-}
-
-.chapter-navigation a:last-child {
-background:var(--turquoise);
-}
-
+.chapter-navigation a:first-child { background:white; }
+.chapter-navigation a:last-child { background:var(--turquoise); }
 .chapter-navigation a:hover {
 background:var(--coral);
 color:white;
@@ -818,10 +616,7 @@ transform:translate(2px,2px);
 box-shadow:2px 2px 0 var(--ink);
 }
 
-/* =========================
-FOOTER
-========================= */
-
+/* FOOTER */
 .footer {
 width:100%;
 max-width:1200px;
@@ -835,142 +630,56 @@ gap:12px;
 color:var(--muted);
 font-size:10px;
 }
+.footer strong { color:var(--ink); }
 
-.footer strong {
-color:var(--ink);
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-
+/* RESPONSIVE */
 @media(max-width:850px) {
-
-.hero {
-gap:25px;
+.hero { gap:25px; }
+.parameter-grid { grid-template-columns:repeat(2,1fr); }
+.explanation-grid { grid-template-columns:1fr 1fr; }
 }
-
-.parameter-grid {
-grid-template-columns:repeat(2,1fr);
-}
-
-.explanation-grid {
-grid-template-columns:1fr 1fr;
-}
-
-}
-
 @media(max-width:600px) {
-
-.navbar {
-padding:14px 5%;
-}
-
-.logo {
-font-size:11px;
-}
-
-.logo-icon {
-width:34px;
-height:34px;
-}
-
-.nav-links {
-gap:10px;
-}
-
-.nav-links a {
-font-size:9px;
-}
-
+.navbar { padding:14px 5%; }
+.logo { font-size:11px; }
+.logo-icon { width:34px; height:34px; }
+.nav-links { gap:10px; }
+.nav-links a { font-size:9px; }
 .hero {
 grid-template-columns:1fr;
 text-align:center;
 padding:45px 6%;
 gap:30px;
 }
-
-.hero h1 {
-font-size:42px;
+.hero h1 { font-size:42px; }
+.hero p { font-size:12px; }
+.hero-card { max-width:420px; width:100%; margin:auto; }
+.container { padding:35px 6% 65px; }
+.section h2 { font-size:19px; }
+.parameter-grid,.explanation-grid { grid-template-columns:1fr; }
+.experiment-buttons { grid-template-columns:1fr; }
+.chapter-navigation { flex-direction:column; }
+.chapter-navigation a { width:100%; }
+.footer { justify-content:center; text-align:center; }
 }
-
-.hero p {
-font-size:12px;
-}
-
-.hero-card {
-max-width:420px;
-width:100%;
-margin:auto;
-}
-
-.container {
-padding:35px 6% 65px;
-}
-
-.section h2 {
-font-size:19px;
-}
-
-.parameter-grid,
-.explanation-grid {
-grid-template-columns:1fr;
-}
-
-.experiment-buttons {
-grid-template-columns:1fr;
-}
-
-.chapter-navigation {
-flex-direction:column;
-}
-
-.chapter-navigation a {
-width:100%;
-}
-
-.footer {
-justify-content:center;
-text-align:center;
-}
-
-}
-
 @media(max-width:360px) {
-
-.nav-links {
-gap:7px;
-}
-
-.nav-links a {
-font-size:8px;
-}
-
-.hero h1 {
-font-size:35px;
-}
-
+.nav-links { gap:7px; }
+.nav-links a { font-size:8px; }
+.hero h1 { font-size:35px; }
 }
 </style>
 </head>
 
 <body>
 
-
 <!-- HERO -->
-
 <header class="hero">
-
 <div>
-
 <div class="chapter-label">
 <span></span>
 CHAPTER 02 · GRAPH EXPLORATION
 </div>
 
-<div class="hero-subtitle">
-Learn it. Change it. Observe it.
-</div>
+<div class="hero-subtitle">Learn it. Change it. Observe it.</div>
 
 <h1>
 EXPLORE THE<br>
@@ -979,47 +688,36 @@ BEHAVIOR.
 </h1>
 
 <p>
-Bagaimana sebuah grafik dapat berubah ketika
-nilai parameternya diubah? Mari eksplorasi fungsi
-nilai mutlak melalui visualisasi, pengaturan parameter,
+Bagaimana perubahan nilai a dan b memengaruhi grafik
+fungsi nilai mutlak? Mari eksplorasi bentuk grafik,
+titik puncak, serta karakteristiknya melalui visualisasi
 dan eksperimen interaktif.
 </p>
 
 <div class="hero-meta">
 MATHEMATICS XI G · ABSOLUTE VALUE INTERACTIVE LEARNING
 </div>
-
 </div>
 
 <div class="hero-card">
-
 <div class="hero-sticker">✦</div>
-
 <div class="hero-card-top">
 <span>YOUR LEARNING JOURNEY</span>
 <span>02 / 03</span>
 </div>
-
 <div class="hero-formula">
-f(x) = <span>a|x − h| + k</span>
+f(x) = <span>|ax + b|</span>
 </div>
-
 <div class="hero-note">
 Change the parameters, discover the graph!
 </div>
-
 </div>
-
 </header>
-
 
 <main class="container">
 
-
 <!-- SECTION 01 -->
-
 <section class="section">
-
 <div class="section-heading">
 <div class="section-number">01</div>
 <div>
@@ -1029,46 +727,56 @@ Change the parameters, discover the graph!
 </div>
 
 <p class="section-desc">
-Grafik fungsi nilai mutlak memiliki bentuk khas menyerupai
-huruf V. Bentuk dan posisinya dapat berubah bergantung
-pada parameter yang terdapat dalam persamaan.
+Fungsi nilai mutlak merupakan fungsi yang menghasilkan
+nilai tidak negatif. Grafiknya memiliki bentuk khas
+menyerupai huruf V, dengan titik puncak sebagai titik
+perubahan arah grafik.
 </p>
 
 <div class="card">
-
 <p>
-Untuk memahami perubahan tersebut, kita akan menggunakan
-bentuk umum fungsi nilai mutlak berikut:
+Bentuk umum fungsi nilai mutlak yang kita pelajari adalah:
 </p>
 
 <div class="formula-box">
-
-<div class="formula">
-f(x) = a|x − h| + k
-</div>
-
+<div class="formula">f(x) = |ax + b|</div>
 <div class="formula-caption">
 The general form of absolute value function
 </div>
-
 </div>
 
 <p>
-Pada fungsi tersebut, a, h, dan k merupakan parameter
-yang menentukan karakteristik grafik. Dengan mengubah
-nilai ketiganya, kita dapat mengamati perubahan bentuk
-dan posisi grafik.
+Keterangan:
+<br><br>
+<strong>a</strong> = koefisien x yang memengaruhi kemiringan grafik.
+<br>
+<strong>b</strong> = konstanta yang memengaruhi posisi titik puncak.
+<br><br>
+Sebagai contoh, fungsi f(x) = |x − 2| memiliki
+titik puncak pada koordinat (2, 0).
 </p>
-
 </div>
 
+<div class="card">
+<h3>Karakteristik Grafik</h3>
+<p>
+• Berbentuk huruf V.
+<br>
+• Turun terlebih dahulu, kemudian naik.
+<br>
+• Nilai fungsi tidak pernah negatif.
+<br>
+• Memiliki titik puncak (vertex).
+<br>
+• Domain berupa seluruh bilangan real.
+<br>
+• Range berupa y ≥ 0.
+</p>
+</div>
 </section>
 
-
 <!-- SECTION 02 -->
-
 <section class="section">
-
 <div class="section-heading">
 <div class="section-number">02</div>
 <div>
@@ -1078,22 +786,19 @@ dan posisi grafik.
 </div>
 
 <p class="section-desc">
-Gunakan Desmos Graphing Calculator untuk melihat visualisasi
-grafik fungsi nilai mutlak secara langsung.
+Amati bentuk grafik fungsi nilai mutlak menggunakan
+Desmos Graphing Calculator.
 </p>
 
 <div class="desmos-card">
-
 <div class="desmos-icon">📈</div>
-
 <h3>Desmos Graphing Calculator</h3>
-
 <p>
-Masukkan fungsi <strong>f(x) = a|x − h| + k</strong>
-ke dalam Desmos. Buat slider untuk setiap parameter,
-kemudian amati perubahan grafiknya.
+Masukkan fungsi <strong>f(x) = |ax + b|</strong>
+ke dalam Desmos. Buat slider untuk parameter a dan b,
+kemudian amati bagaimana perubahan keduanya memengaruhi
+bentuk dan posisi titik puncak grafik.
 </p>
-
 <a
 class="desmos-button"
 href="https://www.desmos.com/calculator"
@@ -1102,20 +807,14 @@ rel="noopener noreferrer"
 >
 Open Desmos Calculator ↗
 </a>
-
 <p style="font-size:10px;margin-top:17px;">
 Desmos Graphing Calculator · Opens in a new tab
 </p>
-
 </div>
-
 </section>
 
-
 <!-- SECTION 03 -->
-
 <section class="section" id="parameterSection">
-
 <div class="section-heading">
 <div class="section-number">03</div>
 <div>
@@ -1125,150 +824,69 @@ Desmos Graphing Calculator · Opens in a new tab
 </div>
 
 <p class="section-desc">
-Geser slider untuk mengubah nilai parameter a, h, dan k.
-Perhatikan bagaimana setiap perubahan memengaruhi
-persamaan fungsi dan posisi titik puncak.
+Geser slider untuk mengubah nilai a dan b.
+Perhatikan bagaimana perubahan parameter memengaruhi
+persamaan, kemiringan, dan titik puncak grafik.
 </p>
 
 <div class="connection-guide">
-
 <div class="connection-icon">🔗</div>
-
 <p>
 <strong>Connected to Section 04!</strong><br>
 Tombol eksperimen pada bagian berikutnya dapat
-mengubah slider di bagian ini secara otomatis.
-Kamu bisa mengamati perubahan nilainya secara langsung.
+mengubah slider secara otomatis. Amati perubahan
+persamaan dan titik puncaknya.
 </p>
-
 </div>
-
 
 <div class="parameter-grid">
 
-<!-- A -->
-
 <div class="parameter-card">
-
 <h3>Parameter a</h3>
-
-<p>
-Mengatur arah buka dan tingkat kecuraman grafik.
-</p>
-
-<div class="parameter-value" id="valueA">1.0</div>
-
-<input
-type="range"
-id="sliderA"
-min="-3"
-max="3"
-step="0.1"
-value="1"
-aria-label="Parameter a"
->
-
+<p>Mengatur kemiringan dan kecuraman grafik.</p>
+<div class="parameter-value" id="valueA">1</div>
+<input type="range" id="sliderA" min="-3" max="3" step="0.1" value="1" aria-label="Parameter a">
 <div class="range-labels">
-<span>-3</span>
-<span>0</span>
-<span>3</span>
+<span>-3</span><span>0</span><span>3</span>
 </div>
-
 <div class="parameter-note" id="noteA">
-Grafik membuka ke atas dengan bentuk standar.
+Grafik memiliki kemiringan standar.
 </div>
-
 </div>
-
-
-<!-- H -->
 
 <div class="parameter-card">
-
-<h3>Parameter h</h3>
-
-<p>
-Mengatur pergeseran grafik secara horizontal.
-</p>
-
-<div class="parameter-value" id="valueH">0</div>
-
-<input
-type="range"
-id="sliderH"
-min="-5"
-max="5"
-step="1"
-value="0"
-aria-label="Parameter h"
->
-
+<h3>Parameter b</h3>
+<p>Memengaruhi posisi titik puncak grafik.</p>
+<div class="parameter-value" id="valueB">-2</div>
+<input type="range" id="sliderB" min="-5" max="5" step="1" value="-2" aria-label="Parameter b">
 <div class="range-labels">
-<span>-5</span>
-<span>0</span>
-<span>5</span>
+<span>-5</span><span>0</span><span>5</span>
 </div>
-
-<div class="parameter-note" id="noteH">
-Tidak ada pergeseran horizontal.
+<div class="parameter-note" id="noteB">
+Titik puncak berada di x = 2.
 </div>
-
 </div>
-
-
-<!-- K -->
 
 <div class="parameter-card">
-
-<h3>Parameter k</h3>
-
-<p>
-Mengatur pergeseran grafik secara vertikal.
-</p>
-
-<div class="parameter-value" id="valueK">0</div>
-
-<input
-type="range"
-id="sliderK"
-min="-5"
-max="5"
-step="1"
-value="0"
-aria-label="Parameter k"
->
-
-<div class="range-labels">
-<span>-5</span>
-<span>0</span>
-<span>5</span>
+<h3>Titik Puncak</h3>
+<p>Koordinat titik terendah grafik.</p>
+<div class="parameter-value" id="valueVertex">(2, 0)</div>
+<div class="parameter-note" id="noteVertex">
+Titik puncak merupakan pertemuan kedua cabang grafik.
 </div>
-
-<div class="parameter-note" id="noteK">
-Tidak ada pergeseran vertikal.
 </div>
 
 </div>
-
-</div>
-
-
-<!-- FUNCTION DISPLAY -->
 
 <div class="function-display">
-
 <small>✳ YOUR CURRENT FUNCTION</small>
-
 <div class="function-equation" id="functionEquation">
-f(x) = |x|
+f(x) = |x − 2|
 </div>
-
 <div class="vertex-info" id="vertexInfo">
-Titik puncak (vertex): (0, 0)
+Titik puncak: (2, 0)
 </div>
-
 </div>
-
 
 <div style="
 display:flex;
@@ -1278,24 +896,17 @@ flex-wrap:wrap;
 gap:12px;
 margin-top:20px;
 ">
-
 <span style="font-size:10px;color:var(--muted);">
-INITIAL VALUES: a = 1, h = 0, k = 0
+INITIAL VALUES: a = 1, b = -2
 </span>
-
 <button class="reset-btn" onclick="resetGraph()">
 ↺ Reset Parameter
 </button>
-
 </div>
-
 </section>
 
-
 <!-- SECTION 04 -->
-
 <section class="section" id="experimentSection">
-
 <div class="section-heading">
 <div class="section-number">04</div>
 <div>
@@ -1305,127 +916,80 @@ INITIAL VALUES: a = 1, h = 0, k = 0
 </div>
 
 <p class="section-desc">
-Sekarang giliranmu bereksperimen! Pilih salah satu
-skenario berikut untuk melihat perubahan grafik.
-Setiap tombol akan secara otomatis mengubah nilai
-parameter pada bagian 03.
+Pilih salah satu skenario untuk mengamati perubahan
+grafik. Setiap tombol akan mengubah nilai parameter
+a dan b pada bagian 03 secara otomatis.
 </p>
-
 
 <div class="card">
-
 <h3>Pilih Skenario Eksperimen</h3>
-
 <p>
-Klik salah satu tombol di bawah ini.
-Slider parameter a, h, dan k pada bagian 03
-akan langsung menyesuaikan nilai skenario yang dipilih.
+Amati perbedaan bentuk grafik dan posisi titik puncak
+dari setiap persamaan berikut.
 </p>
-
 
 <div class="experiment-buttons">
 
-<button class="preset-btn"
-onclick="setPreset(1,0,0,'Grafik Awal',this)">
-
-01. Grafik Awal
-
-<span>a = 1, h = 0, k = 0</span>
-
+<button class="preset-btn" onclick="setPreset(1,0,'Grafik Dasar',this)">
+01. Grafik Dasar
+<span>f(x) = |x|</span>
 </button>
 
-
-<button class="preset-btn"
-onclick="setPreset(2,0,0,'Grafik Lebih Sempit',this)">
-
-02. Grafik Lebih Sempit
-
-<span>a = 2, h = 0, k = 0</span>
-
+<button class="preset-btn" onclick="setPreset(1,-2,'Contoh pada Materi',this)">
+02. Contoh pada Materi
+<span>f(x) = |x − 2|</span>
 </button>
 
-
-<button class="preset-btn"
-onclick="setPreset(0.5,0,0,'Grafik Lebih Lebar',this)">
-
-03. Grafik Lebih Lebar
-
-<span>a = 0.5, h = 0, k = 0</span>
-
+<button class="preset-btn" onclick="setPreset(2,-4,'Grafik Lebih Curam',this)">
+03. Grafik Lebih Curam
+<span>f(x) = |2x − 4|</span>
 </button>
 
-
-<button class="preset-btn"
-onclick="setPreset(-1,0,0,'Membuka ke Bawah',this)">
-
-04. Membuka ke Bawah
-
-<span>a = -1, h = 0, k = 0</span>
-
+<button class="preset-btn" onclick="setPreset(0.5,-1,'Grafik Lebih Lebar',this)">
+04. Grafik Lebih Lebar
+<span>f(x) = |0.5x − 1|</span>
 </button>
 
-
-<button class="preset-btn"
-onclick="setPreset(1,3,0,'Geser ke Kanan',this)">
-
-05. Geser ke Kanan
-
-<span>a = 1, h = 3, k = 0</span>
-
+<button class="preset-btn" onclick="setPreset(1,3,'Titik Puncak di Kiri',this)">
+05. Titik Puncak di Kiri
+<span>f(x) = |x + 3|</span>
 </button>
 
-
-<button class="preset-btn"
-onclick="setPreset(1,0,3,'Geser ke Atas',this)">
-
-06. Geser ke Atas
-
-<span>a = 1, h = 0, k = 3</span>
-
+<button class="preset-btn" onclick="setPreset(-1,-2,'Koefisien Negatif',this)">
+06. Koefisien Negatif
+<span>f(x) = |−x − 2|</span>
 </button>
 
 </div>
-
-
-<!-- ACTIVE PRESET -->
 
 <div class="active-preset" id="activePreset">
-
 <strong>✦ Belum ada skenario yang dipilih.</strong>
-
 <p>
 Pilih salah satu skenario untuk mengubah parameter
-pada bagian 03 secara otomatis.
+secara otomatis.
 </p>
-
 </div>
-
 </div>
-
-
-<!-- REFLECTION -->
 
 <div class="reflection">
-
 <h3>Let's Think!</h3>
-
 <p>
 Setelah melakukan eksperimen, coba pikirkan:
-Apa yang terjadi ketika nilai a menjadi negatif?
-Mengapa grafik menjadi lebih sempit ketika nilai
-mutlak a semakin besar? Apakah perubahan h dan k
-memengaruhi bentuk grafik atau hanya posisinya?
+<br><br>
+1. Apa yang terjadi ketika nilai a semakin besar?
+<br>
+2. Bagaimana perubahan nilai b memengaruhi titik puncak?
+<br>
+3. Mengapa grafik selalu berada di atas atau tepat
+pada sumbu x?
+<br>
+4. Apa yang terjadi jika nilai a sama dengan nol?
 </p>
-
 </div>
-
 </section>
 
-
 <!-- SECTION 05 -->
-
 <section class="section">
-
 <div class="section-heading">
 <div class="section-number">05</div>
 <div>
@@ -1435,120 +999,91 @@ memengaruhi bentuk grafik atau hanya posisinya?
 </div>
 
 <p class="section-desc">
-Setelah mencoba berbagai skenario, mari pahami alasan
-di balik perubahan grafik. Setiap parameter mempunyai
-pengaruh yang berbeda terhadap bentuk dan posisi grafik.
+Setelah melakukan eksperimen, mari pahami pengaruh
+parameter a dan b terhadap grafik fungsi nilai mutlak.
 </p>
-
 
 <div class="explanation-grid">
 
 <div class="explanation-item">
-
 <div class="symbol">a</div>
-
-<h3>Pengaruh terhadap Bentuk Grafik</h3>
-
+<h3>Pengaruh Koefisien a</h3>
 <p>
-Jika a positif, grafik membuka ke atas.
-Jika a negatif, grafik membuka ke bawah.
-Semakin besar nilai mutlak a, semakin sempit grafik.
-Sebaliknya, jika 0 < |a| < 1, grafik semakin lebar.
+Nilai a memengaruhi tingkat kemiringan atau kecuraman
+grafik. Semakin besar nilai mutlak a, semakin sempit
+grafik. Sebaliknya, semakin kecil nilai mutlak a,
+semakin lebar grafik.
+<br><br>
+Jika a negatif, grafik tetap berbentuk V karena
+seluruh ekspresi berada di dalam tanda nilai mutlak.
 </p>
-
 </div>
-
 
 <div class="explanation-item">
-
-<div class="symbol">h</div>
-
-<h3>Pergeseran Horizontal</h3>
-
+<div class="symbol">b</div>
+<h3>Pengaruh Konstanta b</h3>
 <p>
-Jika h positif, grafik bergeser ke kanan.
-Jika h negatif, grafik bergeser ke kiri.
-Pergeseran ini mengubah posisi titik puncak
-secara horizontal.
+Nilai b memengaruhi posisi titik puncak grafik
+pada sumbu x.
+<br><br>
+Posisi titik puncak dapat ditentukan menggunakan
+rumus x = −b/a, selama a tidak sama dengan nol.
 </p>
-
 </div>
-
 
 <div class="explanation-item">
-
-<div class="symbol">k</div>
-
-<h3>Pergeseran Vertikal</h3>
-
+<div class="symbol">V</div>
+<h3>Bentuk dan Sifat Grafik</h3>
 <p>
-Jika k positif, grafik bergeser ke atas.
-Jika k negatif, grafik bergeser ke bawah.
-Pergeseran ini mengubah posisi titik puncak
-secara vertikal.
+Grafik berbentuk huruf V, turun terlebih dahulu
+kemudian naik.
+<br><br>
+Nilai fungsi tidak pernah negatif.
+Domain adalah seluruh bilangan real dan range
+adalah y ≥ 0.
 </p>
-
 </div>
 
 </div>
-
-
-<!-- CONCLUSION -->
 
 <div class="conclusion">
-
 <h3>✳ Let's Remember!</h3>
-
 <p>
-Bentuk umum fungsi nilai mutlak
-<strong>f(x) = a|x − h| + k</strong>
-menunjukkan bahwa perubahan parameter a, h, dan k
-memengaruhi karakteristik grafik.
+Bentuk umum fungsi nilai mutlak adalah
+<strong>f(x) = |ax + b|</strong>.
 <br><br>
-Parameter a menentukan arah buka dan tingkat
-kecuraman grafik, sedangkan h dan k mengatur posisi
-titik puncak secara horizontal dan vertikal.
+Parameter a memengaruhi kemiringan grafik,
+sedangkan b memengaruhi posisi titik puncak.
+<br><br>
+Untuk a tidak sama dengan nol, titik puncak berada
+pada koordinat <strong>(−b/a, 0)</strong>.
+Grafik selalu menghasilkan nilai yang tidak negatif.
 </p>
-
 <div class="conclusion-note">
 "Don't just observe the graph. Understand why it changes!"
 </div>
-
 </div>
-
 </section>
 
-
 <!-- CHAPTER NAVIGATION -->
-
 <div class="chapter-navigation">
-
 <a href="pengenalankonsep.html">
 ← PREVIOUS: CHAPTER 01
 </a>
-
 <a href="contohsoal.html">
 NEXT: CHAPTER 03 →
 </a>
-
 </div>
 
 </main>
 
-
 <!-- FOOTER -->
-
 <footer class="footer">
-
 <span><strong>MATHEMATICS XI G</strong> · Absolute Value Learning</span>
-
 <span>Learn · Explore · Understand</span>
-
 </footer>
 
-
 <!-- JAVASCRIPT -->
-
 <script>
 
 /* =========================
@@ -1556,8 +1091,7 @@ NEXT: CHAPTER 03 →
 ========================= */
 
 const sliderA = document.getElementById("sliderA");
-const sliderH = document.getElementById("sliderH");
-const sliderK = document.getElementById("sliderK");
+const sliderB = document.getElementById("sliderB");
 
 
 /* =========================
@@ -1565,13 +1099,10 @@ const sliderK = document.getElementById("sliderK");
 ========================= */
 
 function getValues() {
-
-return {
-a: Number(sliderA.value),
-h: Number(sliderH.value),
-k: Number(sliderK.value)
-};
-
+    return {
+        a: Number(sliderA.value),
+        b: Number(sliderB.value)
+    };
 }
 
 
@@ -1580,60 +1111,39 @@ k: Number(sliderK.value)
 ========================= */
 
 function formatNumber(value) {
-
-return Number.isInteger(value)
-? value.toString()
-: value.toFixed(1);
-
+    return Number.isInteger(value)
+        ? value.toString()
+        : Number(value.toFixed(2)).toString();
 }
 
 
 /* =========================
 04. BUILD FUNCTION EQUATION
+f(x) = |ax + b|
 ========================= */
 
-function buildEquation(a,h,k) {
+function buildEquation(a, b) {
 
-if(a === 0) {
-return `f(x) = ${formatNumber(k)}`;
-}
+    if (a === 0) {
+        return `f(x) = |${formatNumber(b)}| = ${Math.abs(b)}`;
+    }
 
-const sign = a < 0 ? "−" : "";
+    const absA = Math.abs(a);
+    const coefficient = absA === 1 ? "" : formatNumber(absA);
 
-const coefficient = Math.abs(a) === 1
-? ""
-: formatNumber(Math.abs(a));
+    let xTerm = a < 0
+        ? `−${coefficient}x`
+        : `${coefficient}x`;
 
-let inside;
+    let constant = "";
 
-if(h === 0) {
+    if (b > 0) {
+        constant = ` + ${formatNumber(b)}`;
+    } else if (b < 0) {
+        constant = ` − ${formatNumber(Math.abs(b))}`;
+    }
 
-inside = "x";
-
-} else if(h > 0) {
-
-inside = `x − ${formatNumber(h)}`;
-
-} else {
-
-inside = `x + ${formatNumber(Math.abs(h))}`;
-
-}
-
-let vertical = "";
-
-if(k > 0) {
-
-vertical = ` + ${formatNumber(k)}`;
-
-} else if(k < 0) {
-
-vertical = ` − ${formatNumber(Math.abs(k))}`;
-
-}
-
-return `f(x) = ${sign}${coefficient}|${inside}|${vertical}`;
-
+    return `f(x) = |${xTerm}${constant}|`;
 }
 
 
@@ -1643,46 +1153,44 @@ return `f(x) = ${sign}${coefficient}|${inside}|${vertical}`;
 
 function updateGraph() {
 
-const {a,h,k} = getValues();
+    const { a, b } = getValues();
 
+    document.getElementById("valueA").textContent =
+        formatNumber(a);
 
-// UPDATE PARAMETER VALUES
+    document.getElementById("valueB").textContent =
+        formatNumber(b);
 
-document.getElementById("valueA").textContent =
-formatNumber(a);
+    document.getElementById("functionEquation").textContent =
+        buildEquation(a, b);
 
-document.getElementById("valueH").textContent =
-formatNumber(h);
+    if (a === 0) {
 
-document.getElementById("valueK").textContent =
-formatNumber(k);
+        document.getElementById("valueVertex").textContent =
+            "Tidak ada";
 
+        document.getElementById("vertexInfo").textContent =
+            `Grafik berupa garis horizontal y = ${Math.abs(b)}. Tidak memiliki satu titik puncak tunggal.`;
 
-// UPDATE EQUATION
+        document.getElementById("noteVertex").textContent =
+            "Grafik berupa garis horizontal karena a = 0.";
 
-document.getElementById("functionEquation").textContent =
-buildEquation(a,h,k);
+    } else {
 
+        const vertexX = -b / a;
+        const formattedX = formatNumber(vertexX);
 
-// UPDATE VERTEX
+        document.getElementById("valueVertex").textContent =
+            `(${formattedX}, 0)`;
 
-if(a === 0) {
+        document.getElementById("vertexInfo").textContent =
+            `Titik puncak (vertex): (${formattedX}, 0)`;
 
-document.getElementById("vertexInfo").textContent =
-`Grafik berupa garis horizontal y = ${formatNumber(k)}. Tidak memiliki satu titik puncak tunggal.`;
+        document.getElementById("noteVertex").textContent =
+            `Grafik mencapai nilai minimum 0 pada x = ${formattedX}.`;
+    }
 
-} else {
-
-document.getElementById("vertexInfo").textContent =
-`Titik puncak (vertex): (${formatNumber(h)}, ${formatNumber(k)})`;
-
-}
-
-
-// UPDATE NOTES
-
-updateNotes(a,h,k);
-
+    updateNotes(a, b);
 }
 
 
@@ -1690,86 +1198,47 @@ updateNotes(a,h,k);
 06. DYNAMIC PARAMETER NOTES
 ========================= */
 
-function updateNotes(a,h,k) {
+function updateNotes(a, b) {
 
-let noteA;
-let noteH;
-let noteK;
+    let noteA;
+    let noteB;
 
+    if (a === 0) {
 
-// PARAMETER A
+        noteA = "Grafik menjadi garis horizontal karena a = 0.";
 
-if(a > 1) {
+    } else if (Math.abs(a) > 1) {
 
-noteA = "Grafik membuka ke atas dan semakin sempit.";
+        noteA = "Grafik lebih curam dan lebih sempit.";
 
-} else if(a > 0 && a < 1) {
+    } else if (Math.abs(a) < 1) {
 
-noteA = "Grafik membuka ke atas dan semakin lebar.";
+        noteA = "Grafik lebih landai dan lebih lebar.";
 
-} else if(a === 1) {
+    } else {
 
-noteA = "Grafik membuka ke atas dengan bentuk standar.";
+        noteA = "Grafik memiliki kemiringan standar.";
+    }
 
-} else if(a < -1) {
+    if (a === 0) {
 
-noteA = "Grafik membuka ke bawah dan semakin sempit.";
+        noteB = `Grafik berupa garis horizontal y = ${Math.abs(b)}.`;
 
-} else if(a < 0 && a > -1) {
+    } else {
 
-noteA = "Grafik membuka ke bawah dan semakin lebar.";
+        const vertexX = -b / a;
 
-} else if(a === -1) {
+        if (vertexX > 0) {
+            noteB = `Titik puncak berada ${formatNumber(vertexX)} satuan ke kanan.`;
+        } else if (vertexX < 0) {
+            noteB = `${formatNumber(Math.abs(vertexX))} satuan ke kiri.`;
+        } else {
+            noteB = "Titik puncak berada di titik asal (0, 0).";
+        }
+    }
 
-noteA = "Grafik membuka ke bawah dengan bentuk standar.";
-
-} else {
-
-noteA = "Grafik menjadi garis horizontal karena a = 0.";
-
-}
-
-
-// PARAMETER H
-
-if(h > 0) {
-
-noteH = `Grafik bergeser ${h} satuan ke kanan.`;
-
-} else if(h < 0) {
-
-noteH = `Grafik bergeser ${Math.abs(h)} satuan ke kiri.`;
-
-} else {
-
-noteH = "Tidak ada pergeseran horizontal.";
-
-}
-
-
-// PARAMETER K
-
-if(k > 0) {
-
-noteK = `Grafik bergeser ${k} satuan ke atas.`;
-
-} else if(k < 0) {
-
-noteK = `Grafik bergeser ${Math.abs(k)} satuan ke bawah.`;
-
-} else {
-
-noteK = "Tidak ada pergeseran vertikal.";
-
-}
-
-
-// DISPLAY NOTES
-
-document.getElementById("noteA").textContent = noteA;
-document.getElementById("noteH").textContent = noteH;
-document.getElementById("noteK").textContent = noteK;
-
+    document.getElementById("noteA").textContent = noteA;
+    document.getElementById("noteB").textContent = noteB;
 }
 
 
@@ -1777,25 +1246,20 @@ document.getElementById("noteK").textContent = noteK;
 07. UPDATE ACTIVE PRESET
 ========================= */
 
-function updateActivePreset(name,a,h,k) {
+function updateActivePreset(name, a, b) {
 
-const activePreset = document.getElementById("activePreset");
+    const activePreset = document.getElementById("activePreset");
 
-activePreset.innerHTML = `
-
-<strong>✦ ${name}</strong>
-
-<p>
-Parameter aktif:
-a = ${formatNumber(a)},
-h = ${formatNumber(h)},
-k = ${formatNumber(k)}.
-<br>
-Slider pada bagian 03 telah diperbarui secara otomatis.
-</p>
-
-`;
-
+    activePreset.innerHTML = `
+        <strong>✦ ${name}</strong>
+        <p>
+            Parameter aktif:
+            a = ${formatNumber(a)},
+            b = ${formatNumber(b)}.
+            <br>
+            Persamaan dan titik puncak telah diperbarui secara otomatis.
+        </p>
+    `;
 }
 
 
@@ -1805,12 +1269,9 @@ Slider pada bagian 03 telah diperbarui secara otomatis.
 
 function clearActiveButtons() {
 
-document.querySelectorAll(".preset-btn").forEach(button => {
-
-button.classList.remove("active");
-
-});
-
+    document.querySelectorAll(".preset-btn").forEach(button => {
+        button.classList.remove("active");
+    });
 }
 
 
@@ -1820,35 +1281,21 @@ button.classList.remove("active");
 
 function handleManualChange() {
 
-// UPDATE ALL INFORMATION
+    updateGraph();
+    clearActiveButtons();
 
-updateGraph();
-
-
-// REMOVE PRESET SELECTION
-
-clearActiveButtons();
-
-
-// DISPLAY MANUAL STATUS
-
-document.getElementById("activePreset").innerHTML = `
-
-<strong>✦ Pengaturan Manual</strong>
-
-<p>
-Kamu sedang mengubah parameter secara langsung.
-Persamaan fungsi, nilai parameter, dan informasi
-titik puncak telah diperbarui sesuai nilai slider.
-</p>
-
-`;
-
+    document.getElementById("activePreset").innerHTML = `
+        <strong>✦ Pengaturan Manual</strong>
+        <p>
+            Kamu sedang mengubah parameter secara langsung.
+            Persamaan fungsi dan titik puncak telah diperbarui
+            sesuai nilai slider.
+        </p>
+    `;
 }
 
-sliderA.addEventListener("input",handleManualChange);
-sliderH.addEventListener("input",handleManualChange);
-sliderK.addEventListener("input",handleManualChange);
+sliderA.addEventListener("input", handleManualChange);
+sliderB.addEventListener("input", handleManualChange);
 
 
 /* =========================
@@ -1857,36 +1304,20 @@ sliderK.addEventListener("input",handleManualChange);
 
 function resetGraph() {
 
-// RETURN TO INITIAL VALUES
+    sliderA.value = 1;
+    sliderB.value = -2;
 
-sliderA.value = 1;
-sliderH.value = 0;
-sliderK.value = 0;
+    updateGraph();
+    clearActiveButtons();
 
-
-// UPDATE ALL INFORMATION
-
-updateGraph();
-
-
-// CLEAR SELECTED PRESET
-
-clearActiveButtons();
-
-
-// UPDATE STATUS
-
-document.getElementById("activePreset").innerHTML = `
-
-<strong>↺ Parameter Berhasil Direset</strong>
-
-<p>
-Semua parameter telah kembali ke nilai awal:
-a = 1, h = 0, dan k = 0.
-</p>
-
-`;
-
+    document.getElementById("activePreset").innerHTML = `
+        <strong>↺ Parameter Berhasil Direset</strong>
+        <p>
+            Semua parameter telah kembali ke nilai awal:
+            a = 1 dan b = -2.
+            Persamaan awal adalah f(x) = |x − 2|.
+        </p>
+    `;
 }
 
 
@@ -1894,41 +1325,22 @@ a = 1, h = 0, dan k = 0.
 11. PRESET EXPERIMENTS
 ========================= */
 
-function setPreset(a,h,k,name,button) {
+function setPreset(a, b, name, button) {
 
-// CHANGE SLIDER VALUES IN SECTION 03
+    sliderA.value = a;
+    sliderB.value = b;
 
-sliderA.value = a;
-sliderH.value = h;
-sliderK.value = k;
+    updateGraph();
 
+    clearActiveButtons();
+    button.classList.add("active");
 
-// UPDATE ALL PARAMETER INFORMATION
+    updateActivePreset(name, a, b);
 
-updateGraph();
-
-
-// HIGHLIGHT SELECTED BUTTON
-
-clearActiveButtons();
-
-button.classList.add("active");
-
-
-// UPDATE ACTIVE EXPERIMENT INFORMATION
-
-updateActivePreset(name,a,h,k);
-
-
-// NAVIGATE TO SECTION 03
-
-document.getElementById("parameterSection").scrollIntoView({
-
-behavior:"smooth",
-block:"start"
-
-});
-
+    document.getElementById("parameterSection").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 
